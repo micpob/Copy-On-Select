@@ -17,7 +17,7 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["clipboardRead", "clipboardWrite","activeTab"],
+  "permissions": ["clipboardWrite","activeTab", "storage"],
   "options_ui": {
     "page": "Options/options.html"
   },
