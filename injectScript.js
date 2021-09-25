@@ -1,30 +1,33 @@
 let clipboardContent
 
 const copySelectionToclipboard = (event) => {
-  console.log('Some text selected:', window.getSelection().toString())
-  const selection = window.getSelection()
-
-  if (typeof selection !== 'undefined' && selection.toString().length > 0 && selection.toString() !== clipboardContent) {
-    console.log('selection:', selection.toString())
-    /* const oRange = selection.getRangeAt(0); 
-    const oRect = oRange.getBoundingClientRect(); */
-
-    navigator.clipboard.writeText(selection.toString()).then(
-      function () {
-        chrome.storage.local.get('settings', (result) => {
-          console.log('result.settings:', result.settings)
-          if (result.settings.showCopiedAlert) {
-            showCopiedAlert(event, selection.toString())
+  chrome.storage.sync.get('active', (result) => {
+    if (result.active) {
+      console.log('Some text selected:', window.getSelection().toString())
+      const selection = window.getSelection()
+    
+      if (typeof selection !== 'undefined' && selection.toString().length > 0 && selection.toString() !== clipboardContent) {
+        console.log('selection:', selection.toString())
+        /* const oRange = selection.getRangeAt(0); 
+        const oRect = oRange.getBoundingClientRect(); */
+    
+        navigator.clipboard.writeText(selection.toString()).then(
+          function () {
+            chrome.storage.sync.get('showCopiedAlert', (result) => {
+              if (result.showCopiedAlert) {
+                showCopiedAlert(event, selection.toString())
+              }
+            })  
+    
+          },
+          function (e) {
+          console.log('NOT copied to clipboard:', e)
+    
           }
-        })  
-
-      },
-      function (e) {
-      console.log('NOT copied to clipboard:', e)
-
+        )
       }
-    )
-  }
+    }
+  })  
 }
 
 const showCopiedAlert = (event, selection) => {

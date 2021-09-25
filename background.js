@@ -5,12 +5,9 @@ chrome.runtime.onInstalled.addListener((details) => {
 
   switch (reason) {
      case 'install':
-        chrome.storage.local.set({
-          "settings": {
-            "active": true,
-            "showCopiedAlert": true,
-            "excludedDomains": [],
-          },
+        chrome.storage.sync.set({
+          "active": true,
+          "showCopiedAlert": true,
         }, () => {
 
         })
@@ -29,4 +26,16 @@ chrome.runtime.onInstalled.addListener((details) => {
         break;
   }
 
+})
+
+chrome.action.onClicked.addListener( () => {
+  chrome.storage.sync.get('active', (result) => {
+    if (result.active) {
+      chrome.storage.sync.set({ 'active': false })
+      chrome.action.setIcon({path: 'Res/Icons/icon64_off.png'})
+    } else {
+      chrome.storage.sync.set({ 'active': true })
+      chrome.action.setIcon({path: 'Res/Icons/icon64.png'})
+    }
+  })  
 })

@@ -10,8 +10,10 @@
   "default_locale": "en",
   "icons": {
     "16": "Res/Icons/icon16.png",
+    "24": "Res/Icons/icon24.png",
     "32": "Res/Icons/icon32.png",
     "48": "Res/Icons/icon48.png",
+    "64": "Res/Icons/icon64.png",
     "128": "Res/Icons/icon128.png"
   },
   "background": {
@@ -33,8 +35,10 @@
   "action": {
     "default_icon": {
       "16": "Res/Icons/icon16.png",
+      "24": "Res/Icons/icon24.png",
       "32": "Res/Icons/icon32.png",
       "48": "Res/Icons/icon48.png",
+      "64": "Res/Icons/icon64.png",
       "128": "Res/Icons/icon128.png"
     }
   }
