@@ -9,14 +9,14 @@ chrome.runtime.onInstalled.addListener((details) => {
           "active": true,
           "showCopiedAlert": true,
         }, () => {
-
+          setUpContextMenus()
         })
         break;
      case 'update':
+        setUpContextMenus()
         //chrome.tabs.create({ url: chrome.extension.getURL('update.html') })
         break;
      case 'chrome_update':
-        
         break;
      case 'shared_module_update':
      
