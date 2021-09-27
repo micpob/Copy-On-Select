@@ -13,6 +13,13 @@ const setUpContextMenus = () => {
       }
       chrome.contextMenus.create(contextMenushowCopiedAlert, () => chrome.runtime.lastError)
       
+      //Deactivate on this domain 
+      const contextMenuDeactiveOnThisDomain = {
+        id: 'deactiveOnThisDomainContextMenu',
+        title: `Turn off on this domain`,
+        contexts: ['action']
+      }
+      chrome.contextMenus.create(contextMenuDeactiveOnThisDomain, () => chrome.runtime.lastError)
     })
   })
 }
@@ -25,6 +32,23 @@ chrome.contextMenus.onClicked.addListener((clickData) => {
         
       })
     })
+  }
+  if (clickData.menuItemId == 'deactiveOnThisDomainContextMenu') {
+    console.log('deactiveOnThisDomainContextMenu')
+    chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+      const url = new URL(tabs[0].url)
+      const hostname = url.hostname
+      chrome.storage.sync.get('restrictedDomains', (result) => {
+        const restrictedDomains = result.restrictedDomains
+        if (!restrictedDomains.includes(hostname)) {
+          restrictedDomains.push(hostname)
+          chrome.storage.sync.set({'restrictedDomains': restrictedDomains}, () => {
+          
+          })
+        }
+      })
+    })
+    
   }
 })
 
