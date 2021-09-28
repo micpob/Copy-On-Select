@@ -13,9 +13,10 @@ const copySelectionToclipboard = (event) => {
     
         navigator.clipboard.writeText(selection.toString()).then(
           function () {
+            clipboardContent = selection.toString()
             chrome.storage.sync.get('showCopiedAlert', (result) => {
               if (result.showCopiedAlert) {
-                showCopiedAlert(event, selection.toString())
+                showCopiedAlert(event)
               }
             })  
     
@@ -30,7 +31,7 @@ const copySelectionToclipboard = (event) => {
   })  
 }
 
-const showCopiedAlert = (event, selection) => {
+const showCopiedAlert = (event) => {
   const alertContainer = document.createElement('div')
   const alertText = document.createElement('p')
   alertText.innerText = 'copied!'  
@@ -59,15 +60,28 @@ const showCopiedAlert = (event, selection) => {
   
   document.body.appendChild(alertContainer)
 
-  clipboardContent = selection
-
   setTimeout(() => {
     document.body.removeChild(alertContainer)
   }, 1000);
 
 }
 
-document.addEventListener('pointerup', copySelectionToclipboard)
+document.addEventListener('pointerup', (e) => {
+  if (e.ctrlKey || e.metaKey) {
+    return
+  } else {
+    copySelectionToclipboard(e)
+  }  
+})
+/* document.addEventListener('selectionchange', (e) => {
+  if (e.ctrlKey || e.metaKey) {
+    return
+  } else {
+  console.log(document.getSelection());
+
+    copySelectionToclipboard(e)
+  }  
+}) */
 /* document.addEventListener('keyup', function(){
   console.log('highlight');
 }) */
