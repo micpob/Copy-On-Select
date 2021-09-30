@@ -69,7 +69,9 @@ const showCopiedAlert = (event) => {
 const pasteOnDoubleClick = () => {
   chrome.storage.sync.get(['active', 'pasteOnDoubleClick'], (result) => {
     if (result.active && result.pasteOnDoubleClick) {
-      document.execCommand('paste')
+      setTimeout(() => {
+        document.execCommand('paste')
+      }, 100)
     }
   })  
 }
