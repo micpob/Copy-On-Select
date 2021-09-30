@@ -66,6 +66,14 @@ const showCopiedAlert = (event) => {
 
 }
 
+const pasteOnDoubleClick = () => {
+  chrome.storage.sync.get(['active', 'pasteOnDoubleClick'], (result) => {
+    if (result.active && result.pasteOnDoubleClick) {
+      document.execCommand('paste')
+    }
+  })  
+}
+
 document.addEventListener('pointerup', (e) => {
   if (e.ctrlKey || e.metaKey) {
     return
@@ -73,6 +81,7 @@ document.addEventListener('pointerup', (e) => {
     copySelectionToclipboard(e)
   }  
 })
+
 /* document.addEventListener('selectionchange', (e) => {
   if (e.ctrlKey || e.metaKey) {
     return
@@ -85,5 +94,12 @@ document.addEventListener('pointerup', (e) => {
 /* document.addEventListener('keyup', function(){
   console.log('highlight');
 }) */
+
+document.addEventListener('dblclick', (e) => {
+  //console.log('double click detected')
+  if (e.ctrlKey || e.metaKey) {
+    pasteOnDoubleClick()
+  } 
+})
 
 console.log('End of script')

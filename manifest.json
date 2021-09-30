@@ -19,7 +19,7 @@
   "background": {
     "service_worker": "bg-wrapper.js"
   },
-  "permissions": ["clipboardWrite","activeTab", "storage", "contextMenus"],
+  "permissions": ["clipboardRead", "clipboardWrite","activeTab", "storage", "contextMenus"],
   "options_ui": {
     "page": "Options/options.html"
   },

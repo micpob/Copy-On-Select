@@ -8,6 +8,7 @@ chrome.runtime.onInstalled.addListener((details) => {
         chrome.storage.sync.set({
           "active": true,
           "showCopiedAlert": true,
+          "pasteOnDoubleClick": true,
           "restrictedDomains": []
         }, () => {
           setUpContextMenus()
