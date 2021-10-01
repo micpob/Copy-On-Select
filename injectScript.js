@@ -76,29 +76,57 @@ const pasteOnDoubleClick = () => {
   })  
 }
 
+const isElementInput = (element) => {
+  if (element.nodeName == 'INPUT' || element.nodeName == 'TEXTAREA' || element.isContentEditable) {
+    return true
+  } else {
+    return false
+  }
+}
+
+const pasteOnMiddleClick = (e) => {
+  chrome.storage.sync.get(['active', 'pasteOnMiddleClick'], (result) => {
+    if (result.active && result.pasteOnMiddleClick && isElementInput(e.target)) {
+      e.target.value = ''
+      document.execCommand('paste')
+    }
+  })
+}
+
 document.addEventListener('pointerup', (e) => {
   if (e.ctrlKey || e.metaKey) {
     return
   } else {
-    copySelectionToclipboard(e)
+    if (e.which == 2|| e.button == 4) {
+      pasteOnMiddleClick(e)
+    } else {
+      copySelectionToclipboard(e)
+    }
+  }  
+    }
   }  
 })
 
-/* document.addEventListener('selectionchange', (e) => {
-  if (e.ctrlKey || e.metaKey) {
-    return
-  } else {
-  console.log(document.getSelection());
-
-    copySelectionToclipboard(e)
+document.addEventListener('pointerdown', (e) => {
+  if (e.which == 2|| e.button == 4) {
+    if (isElementInput(e.target)) {
+      e.target.focus()
+      e.preventDefault()
+      e.stopPropagation()
+    }
+    /* chrome.storage.sync.get(['active', 'pasteOnMiddleClick'], (result) => {
+      if (result.active && result.pasteOnMiddleClick && isElementInput(e.target)) {
+        e.target.focus()
+        e.preventDefault()
+        e.stopPropagation()
+      }
   }  
-}) */
-/* document.addEventListener('keyup', function(){
-  console.log('highlight');
-}) */
+      }
+    }) */
+  }
+})
 
 document.addEventListener('dblclick', (e) => {
-  //console.log('double click detected')
   if (e.ctrlKey || e.metaKey) {
     pasteOnDoubleClick()
   } 

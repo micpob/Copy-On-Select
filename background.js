@@ -9,6 +9,7 @@ chrome.runtime.onInstalled.addListener((details) => {
           "active": true,
           "showCopiedAlert": true,
           "pasteOnDoubleClick": true,
+          "pasteOnMiddleClick": true,
           "restrictedDomains": []
         }, () => {
           setUpContextMenus()
