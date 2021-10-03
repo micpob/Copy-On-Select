@@ -1,20 +1,35 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-  <meta charset="utf-8">
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Copy on Select options</title>
-  <meta name="description" content=" ">
-  <meta name=" " content=" ">
-
-  <link rel="stylesheet" href="options.css">
-  </head>
-
-  <body>
+  <link rel="shortcut icon" type="image/png" href="Res/Icons/icon32.png"/>
+  <link rel="stylesheet" type="text/css" href="options.css">
+</head>
+<body>
+  <main>
+    <h1 data-text="options_page_title">Options:</h1>
+    <h2 id="show_copied_alert_setter" class="inactive">
+      <span data-text="show_copied_alert_option">Show 'Copied!' alert</span>
+      <label class="switch"> <input type="checkbox" id="show_copied_alert_switch"> <span class="slider"></span> </label>
+      <span id="show_copied_alert_on_off_label">off</span>
+    </h2>
+    <h2 id="paste_on_middle_click_setter" class="inactive">
+      <span data-text="paste_on_middle_click_option">Paste on middle click</span>
+      <label class="switch"> <input type="checkbox" id="paste_on_middle_click_switch"> <span class="slider"></span> </label>
+      <span id="paste_on_middle_click_on_off_label">off</span>
+    </h2>
+    <h2 id="paste_on_double_click_ctrl_setter" class="inactive">
+      <span data-text="paste_on_double_click_ctrl_option">Paste on double click + ctrl</span>
+      <label class="switch"> <input type="checkbox" id="paste_on_double_click_ctrl_switch"> <span class="slider"></span> </label>
+      <span id="paste_on_double_click_ctrl_on_off_label">off</span>
+    </h2>
     
-      <p>Test</p>
-  </body>
-  <script src="options.js"></script>
-  
+    <br>
+    <button data-text="close_page_button" id="close">Close this page</button> 
+  </main>  
+</body>
+<script src="options.js"></script>
 </html>
