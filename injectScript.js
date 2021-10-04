@@ -3,11 +3,11 @@ let clipboardContent
 const copySelectionToclipboard = (event) => {
   chrome.storage.sync.get('active', (result) => {
     if (result.active) {
-      console.log('Some text selected:', window.getSelection().toString())
+      //console.log('Some text selected:', window.getSelection().toString())
       const selection = window.getSelection()
     
       if (typeof selection !== 'undefined' && selection.toString().length > 0 && selection.toString() !== clipboardContent) {
-        console.log('selection:', selection.toString())
+        //console.log('selection:', selection.toString())
         /* const oRange = selection.getRangeAt(0); 
         const oRect = oRange.getBoundingClientRect(); */
     
@@ -43,26 +43,29 @@ const showCopiedAlert = (event) => {
   alertText.style.padding = '1px 5px'
   alertContainer.appendChild(alertText)
 
-  alertContainer.style.zIndex = '1000'
-  /* alertContainer.style.left = oRect.x + "px"
-  alertContainer.style.top = oRect.y + "px" */
-  /* alertContainer.style.left = (oRect.x + (oRect.width / 2)) + "px"
-  alertContainer.style.top = (oRect.y + (oRect.height / 2)) + "px" */
-/*  alertContainer.style.left = (oRect.x + (oRect.width / 2) - (alertContainer.width / 2)) + "px"
-  alertContainer.style.top = (oRect.y + (oRect.heigth / 2) - (alertContainer.heigth / 2)) + "px" */
-  alertContainer.style.left = event.pageX + "px"
-  alertContainer.style.top = (event.pageY - 40) + "px"
+  alertContainer.style.zIndex = '1000000'
   alertContainer.style.position = 'absolute'
   alertContainer.style.userSelect = 'none'   
   alertContainer.style.background = 'black'
   alertContainer.style.opacity = '1'
   alertContainer.style.borderRadius = '4px'
+
+  alertContainer.id = 'copy_on_select_popup_alert'
   
   document.body.appendChild(alertContainer)
 
+  const popup = document.getElementById('copy_on_select_popup_alert')
+  const rect = popup.getBoundingClientRect()
+  //console.log('window.innerWidth:', window.innerWidth)
+  //console.log('event.pageX:', event.pageX)
+  //console.log('popup.width:', popup.offsetWidth)
+
+  popup.style.left = (window.innerWidth - event.pageX) < popup.offsetWidth || (document.documentElement.clientWidth - event.pageX) < popup.offsetWidth ? (event.pageX - popup.offsetWidth) + "px" : event.pageX + "px"
+  popup.style.top = event.pageY < 45 ? (event.pageY + 15) + "px" : (event.pageY - 40) + "px"
+
   setTimeout(() => {
     document.body.removeChild(alertContainer)
-  }, 1000);
+  }, 400);
 
 }
 
