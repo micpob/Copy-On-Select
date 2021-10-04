@@ -69,10 +69,13 @@ const showCopiedAlert = (event) => {
 
 }
 
-const pasteOnDoubleClick = () => {
+const pasteOnDoubleClick = (e) => {
   chrome.storage.sync.get(['active', 'pasteOnDoubleClick'], (result) => {
     if (result.active && result.pasteOnDoubleClick) {
       setTimeout(() => {
+        if (e.shiftKey) {
+          e.target.value = ''
+        }
         document.execCommand('paste')
       }, 100)
     }
@@ -90,7 +93,9 @@ const isElementInput = (element) => {
 const pasteOnMiddleClick = (e) => {
   chrome.storage.sync.get(['active', 'pasteOnMiddleClick'], (result) => {
     if (result.active && result.pasteOnMiddleClick && isElementInput(e.target)) {
-      e.target.value = ''
+      if (e.shiftKey) {
+        e.target.value = ''
+      }
       document.execCommand('paste')
     }
   })
@@ -104,8 +109,6 @@ document.addEventListener('pointerup', (e) => {
       pasteOnMiddleClick(e)
     } else {
       copySelectionToclipboard(e)
-    }
-  }  
     }
   }  
 })
@@ -123,16 +126,14 @@ document.addEventListener('pointerdown', (e) => {
         e.preventDefault()
         e.stopPropagation()
       }
-  }  
-      }
     }) */
   }
 })
 
 document.addEventListener('dblclick', (e) => {
   if (e.ctrlKey || e.metaKey) {
-    pasteOnDoubleClick()
+    pasteOnDoubleClick(e)
   } 
 })
 
-console.log('End of script')
+//console.log('End of script')
