@@ -1,8 +1,8 @@
 let clipboardContent
 
 const copySelectionToclipboard = (event) => {
-  chrome.storage.sync.get('active', (result) => {
-    if (result.active) {
+  chrome.storage.sync.get(['active', 'copyOnSelect'], (result) => {
+    if (result.active && result.copyOnSelect) {
       //console.log('Some text selected:', window.getSelection().toString())
       const selection = window.getSelection()
     

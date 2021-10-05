@@ -7,6 +7,7 @@ chrome.runtime.onInstalled.addListener((details) => {
      case 'install':
         chrome.storage.sync.set({
           "active": true,
+          "copyOnSelect": true,
           "showCopiedAlert": true,
           "pasteOnDoubleClick": true,
           "pasteOnMiddleClick": true,

@@ -7,6 +7,31 @@ for(let i = 0; i < objects.length; i++) {
   }
 }   */
 
+//Copy on select
+const copyOnSelectSetter = document.getElementById('copy_on_select_setter')
+const copyOnSelectSwitch = document.getElementById('copy_on_select_switch')
+const copyOnSelectonOffIndicator = document.getElementById('copy_on_select_on_off_label')
+
+chrome.storage.sync.get('copyOnSelect', (result) => {  
+  if (result.copyOnSelect) {
+    copyOnSelectSetter.classList.remove('inactive')
+    copyOnSelectSwitch.checked = true
+    copyOnSelectonOffIndicator.innerHTML = 'on'
+  }
+})
+
+copyOnSelectSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    chrome.storage.sync.set({'copyOnSelect': true})    
+    copyOnSelectSetter.classList.remove('inactive')
+    copyOnSelectonOffIndicator.innerHTML = 'on'
+  } else {
+    chrome.storage.sync.set({'copyOnSelect': false})    
+    copyOnSelectSetter.classList.add('inactive')
+    copyOnSelectonOffIndicator.innerHTML = 'off'
+  }
+})
+
 //Show 'copied!' popup alert
 const showCopiedAlertSetter = document.getElementById('show_copied_alert_setter')
 const showCopiedAlertSwitch = document.getElementById('show_copied_alert_switch')
@@ -19,10 +44,6 @@ chrome.storage.sync.get('showCopiedAlert', (result) => {
     showCopiedAlertonOffIndicator.innerHTML = 'on'
   }
 })
-
-/* chrome.storage.sync.get('limit', (counter) => {
-  limit.value = counter.limit
-}) */
 
 showCopiedAlertSwitch.addEventListener('change', (e) => {
   if (e.target.checked) {
