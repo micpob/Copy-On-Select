@@ -13,11 +13,11 @@ chrome.runtime.onInstalled.addListener((details) => {
           "pasteOnMiddleClick": true,
           "restrictedDomains": []
         }, () => {
-          setUpContextMenus()
+          //setUpContextMenus()
         })
         break;
      case 'update':
-        setUpContextMenus()
+        //setUpContextMenus()
         //chrome.tabs.create({ url: chrome.extension.getURL('update.html') })
         break;
      case 'chrome_update':
@@ -43,3 +43,12 @@ chrome.action.onClicked.addListener( () => {
     }
   })  
 })
+
+/* chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+  const tab = tabs[0]
+  const tabUrl = tab.url
+  if (tabUrl && tabUrl.includes('helpshift.com/admin/issue')) {
+    chrome.tabs.sendMessage(tabs[0].id, {content: finalAnswer, numberOfLinesIncipit: numberOfLinesIncipit, numberOfLinesClosing: numberOfLinesClosing})
+    close()
+  }                                        
+}) */

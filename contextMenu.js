@@ -1,4 +1,4 @@
-const setUpContextMenus = () => {
+/* const setUpContextMenus = () => {
   console.log('setUpContextMenus')
   chrome.contextMenus.removeAll(() => {
     //Show 'Copied!' popup alert
@@ -91,3 +91,4 @@ chrome.storage.onChanged.addListener((changes) => {
     }
   }
 })
+ */
