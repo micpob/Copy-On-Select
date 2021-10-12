@@ -26,7 +26,8 @@
   "content_scripts": [
     {
       "js": ["injectScript.js"],
-      "matches": ["*://*/*"]
+      "matches": ["*://*/*"],
+      "all_frames": true
     }
   ],
   "action": {
