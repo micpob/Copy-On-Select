@@ -3,14 +3,9 @@ let clipboardContent
 const copySelectionToclipboard = (event) => {
   chrome.storage.sync.get(['active', 'copyOnSelect'], (result) => {
     if (result.active && result.copyOnSelect) {
-      //console.log('Some text selected:', window.getSelection().toString())
+      console.log('Some text selected:', window.getSelection().toString())
       const selection = window.getSelection()
-    
       if (typeof selection !== 'undefined' && selection.toString().length > 0 && selection.toString() !== clipboardContent) {
-        //console.log('selection:', selection.toString())
-        /* const oRange = selection.getRangeAt(0); 
-        const oRect = oRange.getBoundingClientRect(); */
-    
         navigator.clipboard.writeText(selection.toString()).then(
           function () {
             clipboardContent = selection.toString()
@@ -19,11 +14,16 @@ const copySelectionToclipboard = (event) => {
                 showCopiedAlert(event)
               }
             })  
-    
           },
           function (e) {
-          console.log('NOT copied to clipboard:', e)
-    
+            console.log('NOT copied to clipboard:', e)
+            //fallback for iframes
+            document.execCommand('copy')
+            chrome.storage.sync.get('showCopiedAlert', (result) => {
+              if (result.showCopiedAlert) {
+                showCopiedAlert(event)
+              }
+            })
           }
         )
       }
@@ -37,7 +37,7 @@ const showCopiedAlert = (event) => {
   alertText.innerText = 'copied!'  
   alertText.style.color = 'white'
   alertText.style.fontWeight = '700'
-  alertText.style.fontSize = '20px'
+  alertText.style.fontSize = '20px !important'
   alertText.style.fontSizeAdjust = '100%'
   alertText.style.margin = '0'
   alertText.style.padding = '1px 5px'
