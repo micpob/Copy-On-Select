@@ -1,4 +1,6 @@
 let clipboardContent
+const imageSource = chrome.runtime.getURL("./Res/copied.jpg")
+
 
 const copySelectionToclipboard = (event) => {
   chrome.storage.sync.get(['active', 'copyOnSelect'], (result) => {
@@ -37,18 +39,30 @@ const showCopiedAlert = (event) => {
   alertText.innerText = 'copied!'  
   alertText.style.color = 'white'
   alertText.style.fontWeight = '700'
-  alertText.style.fontSize = '20px !important'
-  alertText.style.fontSizeAdjust = '100%'
+  //alertText.style.fontSize = '20px !important'
+  //alertText.style.fontSizeAdjust = '100%'
   alertText.style.margin = '0'
   alertText.style.padding = '1px 5px'
-  alertContainer.appendChild(alertText)
+  //alertContainer.appendChild(alertText)
+
+  const alertImage =  document.createElement('img')
+  alertImage.src = imageSource
+  alertContainer.appendChild(alertImage)
 
   alertContainer.style.zIndex = '1000000'
   alertContainer.style.position = 'absolute'
   alertContainer.style.userSelect = 'none'   
   alertContainer.style.background = 'black'
   alertContainer.style.opacity = '1'
-  alertContainer.style.borderRadius = '4px'
+  //alertContainer.style.borderRadius = '4px'
+  /* alertContainer.style.width = '100%'
+  alertContainer.style.height = '0'
+  alertContainer.style.backgroundImage = chrome.extension.getURL("./Res/copied.jpg")
+  alertContainer.style.backgroundSize = 'contain'
+  alertContainer.style.backgroundRepeat = 'no-repeat'
+  alertContainer.style.backgroundAttachement = 'fixed'
+  alertContainer.style.paddingTop = '40%' */
+  //alertContainer.style.backgroundPosition = 'center'
 
   alertContainer.id = 'copy_on_select_popup_alert'
   
@@ -65,7 +79,7 @@ const showCopiedAlert = (event) => {
 
   setTimeout(() => {
     document.body.removeChild(alertContainer)
-  }, 400);
+  }, 400)
 
 }
 

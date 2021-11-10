@@ -30,6 +30,10 @@
       "all_frames": true
     }
   ],
+  "web_accessible_resources": [{
+    "resources": ["Res/copied.jpg"],
+    "matches": ["<all_urls>"]
+  }],
   "action": {
     "default_icon": {
       "16": "Res/Icons/icon16.png",
