@@ -1,5 +1,5 @@
 let clipboardContent
-const imageSource = chrome.runtime.getURL("./Res/copied.jpg")
+const imageSource = chrome.runtime.getURL("./Res/copied.svg")
 
 
 const copySelectionToclipboard = (event) => {
@@ -35,45 +35,22 @@ const copySelectionToclipboard = (event) => {
 
 const showCopiedAlert = (event) => {
   const alertContainer = document.createElement('div')
-  const alertText = document.createElement('p')
-  alertText.innerText = 'copied!'  
-  alertText.style.color = 'white'
-  alertText.style.fontWeight = '700'
-  //alertText.style.fontSize = '20px !important'
-  //alertText.style.fontSizeAdjust = '100%'
-  alertText.style.margin = '0'
-  alertText.style.padding = '1px 5px'
-  //alertContainer.appendChild(alertText)
 
   const alertImage =  document.createElement('img')
+  alertImage.style.width = '70px'
   alertImage.src = imageSource
   alertContainer.appendChild(alertImage)
 
   alertContainer.style.zIndex = '1000000'
   alertContainer.style.position = 'absolute'
   alertContainer.style.userSelect = 'none'   
-  alertContainer.style.background = 'black'
+  alertContainer.style.background = 'transparent'
   alertContainer.style.opacity = '1'
-  //alertContainer.style.borderRadius = '4px'
-  /* alertContainer.style.width = '100%'
-  alertContainer.style.height = '0'
-  alertContainer.style.backgroundImage = chrome.extension.getURL("./Res/copied.jpg")
-  alertContainer.style.backgroundSize = 'contain'
-  alertContainer.style.backgroundRepeat = 'no-repeat'
-  alertContainer.style.backgroundAttachement = 'fixed'
-  alertContainer.style.paddingTop = '40%' */
-  //alertContainer.style.backgroundPosition = 'center'
-
   alertContainer.id = 'copy_on_select_popup_alert'
   
   document.body.appendChild(alertContainer)
 
   const popup = document.getElementById('copy_on_select_popup_alert')
-  const rect = popup.getBoundingClientRect()
-  //console.log('window.innerWidth:', window.innerWidth)
-  //console.log('event.pageX:', event.pageX)
-  //console.log('popup.width:', popup.offsetWidth)
-
   popup.style.left = (window.innerWidth - event.pageX) < popup.offsetWidth || (document.documentElement.clientWidth - event.pageX) < popup.offsetWidth ? (event.pageX - popup.offsetWidth) + "px" : event.pageX + "px"
   popup.style.top = event.pageY < 45 ? (event.pageY + 15) + "px" : (event.pageY - 40) + "px"
 

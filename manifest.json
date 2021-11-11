@@ -31,7 +31,7 @@
     }
   ],
   "web_accessible_resources": [{
-    "resources": ["Res/copied.jpg"],
+    "resources": ["Res/copied.svg"],
     "matches": ["<all_urls>"]
   }],
   "action": {
