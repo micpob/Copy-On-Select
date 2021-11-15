@@ -13,34 +13,36 @@
     <h1>Welcome to Copy on Select!</h1>
     <h2>How it works:</h2> 
     <hr>
-    <h3>COPY</h3>
+    <h3>CAVEATS:</h3>
     <ul>
-      <li>Just select some text and it will get copied automatically.</li>    
-      <li>Hold down the Ctrl key (Command on Mac) while selecting if you want to bypass the auto-copying.</li>    
-      <li>Everytime you make a new selection, you will see a short popup alert near your mouse pointer. You can deactivate it in the Options page.</li>    
+      <li>The extension does not work on any page whose URL starts with the word "chrome", for example chrome://extensions/ or chrome://settings/ or this page (this is standard behaviour for all Chrome extensions)</li>   
+      <li>The extension does not work on the page that opens when you click on the + sign to open a new tab in Chrome. Usually this is the google homepage (same as above, this is standard for all Chrome extensions)</li>   
+      <li>The extension does not work if you select some text in the browser's URL bar (because it is outside of the browsing window) </li>   
     </ul>
     <hr>
-    <h3>PASTE</h3>
-    <h4>Method 1: using double click</h4>
+    <h3>COPY:</h3>
     <ul>
-      <li>Double click on a field while holding down the Ctrl key (Command on Mac) and the copied text will be automatically pasted.</li>    
-      <li>Hold down the Shift key too and the field will be emptied of any pre-existing content before pasting.</li>  
-      <li>You can deactivate any of this functionalities in the <!-- <a href="#" onclick="openOptionsPage(); return false">Options page</a> -->.</li>   
-    </ul>
-    <h4>Method 2: using middle click</h4>
-    <ul>
-      <li>Do a middle click (mouse wheel) on a field while holding and the copied text will be automatically pasted.</li>    
-      <li>Hold down the Shift key too and the field will be emptied of any pre-existing content before pasting.</li>    
-      <li>Hold down the Ctrl key (Command on Mac) while middle clicking and the automatic pasting wiull be bypassed.</li> 
-      <li>You can deactivate any of this functionalities in the Options page.</li>   
+      <li>Select some text and it will get copied automatically.</li>    
+      <li>If you want to bypass the auto-copying while selecting something, hold down the Ctrl key (Command on Mac).</li>    
+      <li>You will see a short 'Copied!' alert every time you select something. You can deactivate it in the <a class="option-page-link" href="#">Options page</a> if you don't like it.</li>    
     </ul>
     <hr>
-    <h3>CAVEATS</h3>
+    <h3>PASTE:</h3>
+    <h4>Method 1: Using double click.</h4>
     <ul>
-      <li>The extension does not work on any page whose URL starts with "Chrome", for example chrome://extensions/ or chrome://settings/ (this is standard for any extension, for security reasons)</li>   
-      <li>The extension does not work on the page that opens when you click on the "New Tab" plus sign in Chrome. Usually this is the google homepage (same as above, this is standard for all Chrome extensions)</li>   
-      <li>The extensipn only work in the browser's URL bar (because it is outside of the browsing window) </li>   
+      <li>Double click on a input field while holding down the Ctrl key (Command on Mac) and the copied text will be automatically pasted.</li>    
+      <li>Hold down the Shift key while double clicking and the field will be emptied of any pre-existing content before pasting.</li>  
+      <li>You can deactivate any of this functionalities in the <a class="option-page-link" href="#">Options page</a>.</li>   
     </ul>
+    <h4>Method 2: Using middle click.</h4>
+    <ul>
+      <li>Do a middle click (mouse wheel) on a input field and the copied text will be automatically pasted.</li>    
+      <li>Hold down the Shift key while middle clicking and the field will be emptied of any pre-existing content before pasting.</li>    
+      <li>If you want to bypass the auto-pasting on middle click, hold down the Ctrl key (Command on Mac).</li> 
+      <li>You can deactivate any of this functionalities in the <a class="option-page-link" href="#">Options page</a>.</li>   
+    </ul>
+    <hr>
+    
   </main>  
 </body>
 <script src="guide.js"></script>

@@ -1,6 +1,6 @@
-const openOptionsPage = () => {
-  console.log('openOptionsPage')
-  chrome.runtime.sendMessage("showOptions")
-  console.log('showOptions')
-  /* return false */
-}
+const optionPageLinks = document.getElementsByClassName('option-page-link')
+Array.from(optionPageLinks).forEach(link => {
+  link.addEventListener('click', () => {
+    chrome.runtime.sendMessage("showOptions")
+  })
+})
