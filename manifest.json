@@ -1,7 +1,7 @@
 {
   "name": "__MSG_extension_name__",
   "short_name": "CpyOnSlc",
-  "version": "1.0",
+  "version": "1.2",
   "content_security_policy": {
     "extension_pages": "default-src 'self'"
   },
@@ -21,7 +21,8 @@
   },
   "permissions": ["clipboardRead", "clipboardWrite", "storage", "contextMenus"],
   "options_ui": {
-    "page": "Options/options.html"
+    "page": "Options/options.html",
+    "open_in_tab": true
   },
   "content_scripts": [
     {
