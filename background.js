@@ -1,3 +1,13 @@
+chrome.runtime.onStartup.addListener( () => {
+  chrome.storage.sync.get('active', (result) => {
+    if (result.active) {
+      chrome.action.setIcon({path: 'Res/Icons/icon64.png'})
+    } else {
+      chrome.action.setIcon({path: 'Res/Icons/icon64_off.png'})
+    } 
+  })
+})
+
 chrome.runtime.onInstalled.addListener((details) => {
   /* const currentVersion = chrome.runtime.getManifest().version
   const previousVersion = details.previousVersion */
