@@ -93,15 +93,14 @@ const pasteOnMiddleClick = (e) => {
 }
 
 document.addEventListener('pointerup', (e) => {
-  if (e.ctrlKey || e.metaKey) {
+  if (e.which == 2|| e.button == 4 ) {
+    pasteOnMiddleClick(e)
+  } else if (e.ctrlKey || e.metaKey) {
     return
   } else {
-    if (e.which == 2|| e.button == 4) {
-      pasteOnMiddleClick(e)
-    } else {
-      copySelectionToclipboard(e)
-    }
-  }  
+    copySelectionToclipboard(e)
+  }
+    
 })
 
 document.addEventListener('pointerdown', (e) => {
