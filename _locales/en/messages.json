@@ -3,6 +3,6 @@
     "message": "Copy on Select"
   },
   "extension_description": {
-    "message": "Select some text and it will be instantly copied to the clipboard!"
+    "message": "Select some text and it will be instantly copied to the clipboard! Paste it with one click!"
   }
 }
