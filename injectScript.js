@@ -1,15 +1,13 @@
-let clipboardContent
 const imageSource = chrome.runtime.getURL("./Res/copied.svg")
 
 const copySelectionToclipboard = (event) => {
   chrome.storage.sync.get(['active', 'copyOnSelect'], (result) => {
     if (result.active && result.copyOnSelect) {
-      //console.log('Some text selected:', window.getSelection().toString())
+      //console.log('Something selected:', window.getSelection())
       const selection = window.getSelection()
-      if (typeof selection !== 'undefined' && selection.toString().trim().length > 0 && selection.toString() !== clipboardContent) {
+      if (typeof selection !== 'undefined' && selection.toString().trim().length > 0 /* && selection.toString() !== clipboardContent */) {
         navigator.clipboard.writeText(selection.toString()).then(
           () => {
-            clipboardContent = selection.toString()
             chrome.storage.sync.get('showCopiedAlert', (result) => {
               if (result.showCopiedAlert) {
                 showCopiedAlert(event)
