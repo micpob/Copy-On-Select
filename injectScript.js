@@ -35,6 +35,7 @@ const showCopiedAlert = (event) => {
 
   const alertImage =  document.createElement('img')
   alertImage.style.width = '70px'
+  alertImage.style.filter = 'none'
   alertImage.src = imageSource
   alertContainer.appendChild(alertImage)
 
