@@ -1,4 +1,5 @@
 chrome.runtime.onStartup.addListener( () => {
+  //chrome.storage.sync.set({'lastSelection': ''})
   chrome.storage.sync.get('active', (result) => {
     if (result.active) {
       chrome.action.setIcon({path: 'Res/Icons/icon64.png'})
@@ -21,7 +22,7 @@ chrome.runtime.onInstalled.addListener((details) => {
           "showCopiedAlert": true,
           "pasteOnDoubleClick": true,
           "pasteOnMiddleClick": true,
-          "restrictedDomains": []
+          "lastSelection": ""
         }, () => {
           chrome.tabs.create({ url: chrome.runtime.getURL('guide.html') })
           setUpContextMenus()
@@ -34,7 +35,6 @@ chrome.runtime.onInstalled.addListener((details) => {
      case 'chrome_update':
         break;
      case 'shared_module_update':
-     
         break;
      default:
         
