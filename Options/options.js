@@ -113,7 +113,7 @@ const trimSelectionSwitch = document.getElementById('trim_selection_switch')
 const trimSelectionOnOffIndicator = document.getElementById('trim_selection_on_off_label')
 
 chrome.storage.sync.get('trimSelection', (result) => {  
-  if (result.pasteOnDoubleClick) {
+  if (result.trimSelection) {
     trimSelectionSetter.classList.remove('inactive')
     trimSelectionSwitch.checked = true
     trimSelectionOnOffIndicator.innerHTML = 'on'
