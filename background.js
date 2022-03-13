@@ -22,7 +22,8 @@ chrome.runtime.onInstalled.addListener((details) => {
           "showCopiedAlert": true,
           "pasteOnDoubleClick": true,
           "pasteOnMiddleClick": true,
-          "lastSelection": ""
+          "lastSelection": "",
+          "trimSelection": false
         }, () => {
           chrome.tabs.create({ url: chrome.runtime.getURL('guide.html') })
           setUpContextMenus()

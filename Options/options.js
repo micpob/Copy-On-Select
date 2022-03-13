@@ -107,6 +107,31 @@ pasteOnDoubleClickSwitch.addEventListener('change', (e) => {
   }
 })
 
+//Trim selection
+const trimSelectionSetter = document.getElementById('trim_selection_setter')
+const trimSelectionSwitch = document.getElementById('trim_selection_switch')
+const trimSelectionOnOffIndicator = document.getElementById('trim_selection_on_off_label')
+
+chrome.storage.sync.get('trimSelection', (result) => {  
+  if (result.pasteOnDoubleClick) {
+    trimSelectionSetter.classList.remove('inactive')
+    trimSelectionSwitch.checked = true
+    trimSelectionOnOffIndicator.innerHTML = 'on'
+  }
+})
+
+trimSelectionSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    chrome.storage.sync.set({'trimSelection': true})    
+    trimSelectionSetter.classList.remove('inactive')
+    trimSelectionOnOffIndicator.innerHTML = 'on'
+  } else {
+    chrome.storage.sync.set({'trimSelection': false})    
+    trimSelectionSetter.classList.add('inactive')
+    trimSelectionOnOffIndicator.innerHTML = 'off'
+  }
+})
+
 
 //Open user guide button
 document.getElementById('guide_button').addEventListener('click', () => { chrome.tabs.create({ url: chrome.runtime.getURL('guide.html') }) })
