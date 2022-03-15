@@ -30,7 +30,16 @@ chrome.runtime.onInstalled.addListener((details) => {
         })
         break;
      case 'update':
-        setUpContextMenus()
+        chrome.storage.sync.get(['trimSelection'], (result) => {
+          let trimSelection = result.trimSelection ? result.trimSelection : false
+          chrome.storage.sync.set({
+            "trimSelection": trimSelection
+          }, () => {
+            chrome.contextMenus.removeAll(() => {
+              setUpContextMenus()
+            })
+          })
+        })
         //chrome.tabs.create({ url: chrome.runtime.getURL('guide.html') })
         break;
      case 'chrome_update':
