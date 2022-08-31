@@ -1,11 +1,11 @@
 //Set texts in local language
-/* const objects = document.getElementsByTagName('*')
+const objects = document.getElementsByTagName('*')
 for(let i = 0; i < objects.length; i++) {
   if (objects[i].hasAttribute('data-text')) {
     const textKey = objects[i].getAttribute('data-text')
     objects[i].innerText = chrome.i18n.getMessage(textKey)
   }
-}   */
+}  
 
 //Copy on select
 const copyOnSelectSetter = document.getElementById('copy_on_select_setter')

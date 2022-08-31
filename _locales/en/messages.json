@@ -4,5 +4,29 @@
   },
   "extension_description": {
     "message": "Select some text and it will be instantly copied to the clipboard! Paste it with one click!"
+  },
+  "options_page_title": {
+    "message": "Copy on Select options:"
+  },
+  "copy_on_select_option": {
+    "message": "Copy on select:"
+  },
+  "show_copied_alert_option": {
+    "message": "Show 'Copied!' alert:"
+  },
+  "paste_on_middle_click_option": {
+    "message": "Paste on middle click:"
+  },
+  "paste_on_double_click_ctrl_option": {
+    "message": "Paste on double click + Ctrl:"
+  },
+  "trim_selection_option": {
+    "message": "Trim selection:"
+  },
+  "open_guide_button": {
+    "message": "Open user guide"
+  },
+  "close_page_button": {
+    "message": "Close this page"
   }
 }
