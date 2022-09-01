@@ -28,5 +28,8 @@
   },
   "close_page_button": {
     "message": "Close this page"
+  },
+  "always_clean_field_option": {
+    "message": "Always clean field before pasting:"
   }
 }

@@ -23,17 +23,20 @@ chrome.runtime.onInstalled.addListener((details) => {
           "pasteOnDoubleClick": true,
           "pasteOnMiddleClick": true,
           "lastSelection": "",
-          "trimSelection": false
+          "trimSelection": false,
+          "alwaysCleanField": false
         }, () => {
           chrome.tabs.create({ url: chrome.runtime.getURL('guide.html') })
           setUpContextMenus()
         })
         break;
      case 'update':
-        chrome.storage.sync.get(['trimSelection'], (result) => {
+        chrome.storage.sync.get(['trimSelection', 'alwaysCleanField'], (result) => {
           let trimSelection = result.trimSelection ? result.trimSelection : false
+          let alwaysCleanField = result.alwaysCleanField ? result.alwaysCleanField : false
           chrome.storage.sync.set({
-            "trimSelection": trimSelection
+            "trimSelection": trimSelection,
+            "alwaysCleanField": alwaysCleanField
           }, () => {
             chrome.contextMenus.removeAll(() => {
               setUpContextMenus()

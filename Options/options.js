@@ -132,6 +132,31 @@ trimSelectionSwitch.addEventListener('change', (e) => {
   }
 })
 
+//Always clean field before pasting selection
+const alwaysCleanFieldSetter = document.getElementById('always_clean_field_setter')
+const alwaysCleanFieldSwitch = document.getElementById('always_clean_field_switch')
+const alwaysCleanFieldOnOffIndicator = document.getElementById('always_clean_field_on_off_label')
+
+chrome.storage.sync.get('alwaysCleanField', (result) => {  
+  if (result.alwaysCleanField) {
+    alwaysCleanFieldSetter.classList.remove('inactive')
+    alwaysCleanFieldSwitch.checked = true
+    alwaysCleanFieldOnOffIndicator.innerHTML = 'on'
+  }
+})
+
+alwaysCleanFieldSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    chrome.storage.sync.set({'alwaysCleanField': true})    
+    alwaysCleanFieldSetter.classList.remove('inactive')
+    alwaysCleanFieldOnOffIndicator.innerHTML = 'on'
+  } else {
+    chrome.storage.sync.set({'alwaysCleanField': false})    
+    alwaysCleanFieldSetter.classList.add('inactive')
+    alwaysCleanFieldOnOffIndicator.innerHTML = 'off'
+  }
+})
+
 
 //Open user guide button
 document.getElementById('guide_button').addEventListener('click', () => { chrome.tabs.create({ url: chrome.runtime.getURL('guide.html') }) })

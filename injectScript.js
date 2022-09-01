@@ -64,10 +64,10 @@ const showCopiedAlert = (event) => {
 }
 
 const pasteOnDoubleClick = (e) => {
-  chrome.storage.sync.get(['active', 'pasteOnDoubleClick'], (result) => {
+  chrome.storage.sync.get(['active', 'pasteOnDoubleClick', 'alwaysCleanField'], (result) => {
     if (result.active && result.pasteOnDoubleClick) {
       setTimeout(() => {
-        if (e.shiftKey) {
+        if (e.shiftKey && !result.alwaysCleanField || result.alwaysCleanField && !e.shiftKey) {
           e.target.value = ''
         }
         document.execCommand('paste')
@@ -85,9 +85,9 @@ const isElementInput = (element) => {
 }
 
 const pasteOnMiddleClick = (e) => {
-  chrome.storage.sync.get(['active', 'pasteOnMiddleClick'], (result) => {
+  chrome.storage.sync.get(['active', 'pasteOnMiddleClick', 'alwaysCleanField'], (result) => {
     if (result.active && result.pasteOnMiddleClick && isElementInput(e.target)) {
-      if (e.shiftKey) {
+      if (e.shiftKey && !result.alwaysCleanField || result.alwaysCleanField && !e.shiftKey) {
         e.target.value = ''
       }
       document.execCommand('paste')
