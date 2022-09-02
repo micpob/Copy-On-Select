@@ -12,7 +12,7 @@ const copyOnSelectSetter = document.getElementById('copy_on_select_setter')
 const copyOnSelectSwitch = document.getElementById('copy_on_select_switch')
 const copyOnSelectonOffIndicator = document.getElementById('copy_on_select_on_off_label')
 
-chrome.storage.sync.get('copyOnSelect', (result) => {  
+chrome.storage.local.get('copyOnSelect', (result) => {  
   if (result.copyOnSelect) {
     copyOnSelectSetter.classList.remove('inactive')
     copyOnSelectSwitch.checked = true
@@ -22,11 +22,11 @@ chrome.storage.sync.get('copyOnSelect', (result) => {
 
 copyOnSelectSwitch.addEventListener('change', (e) => {
   if (e.target.checked) {
-    chrome.storage.sync.set({'copyOnSelect': true})    
+    chrome.storage.local.set({'copyOnSelect': true})    
     copyOnSelectSetter.classList.remove('inactive')
     copyOnSelectonOffIndicator.innerHTML = 'on'
   } else {
-    chrome.storage.sync.set({'copyOnSelect': false})    
+    chrome.storage.local.set({'copyOnSelect': false})    
     copyOnSelectSetter.classList.add('inactive')
     copyOnSelectonOffIndicator.innerHTML = 'off'
   }
@@ -37,7 +37,7 @@ const showCopiedAlertSetter = document.getElementById('show_copied_alert_setter'
 const showCopiedAlertSwitch = document.getElementById('show_copied_alert_switch')
 const showCopiedAlertonOffIndicator = document.getElementById('show_copied_alert_on_off_label')
 
-chrome.storage.sync.get('showCopiedAlert', (result) => {  
+chrome.storage.local.get('showCopiedAlert', (result) => {  
   if (result.showCopiedAlert) {
     showCopiedAlertSetter.classList.remove('inactive')
     showCopiedAlertSwitch.checked = true
@@ -47,11 +47,11 @@ chrome.storage.sync.get('showCopiedAlert', (result) => {
 
 showCopiedAlertSwitch.addEventListener('change', (e) => {
   if (e.target.checked) {
-    chrome.storage.sync.set({'showCopiedAlert': true})    
+    chrome.storage.local.set({'showCopiedAlert': true})    
     showCopiedAlertSetter.classList.remove('inactive')
     showCopiedAlertonOffIndicator.innerHTML = 'on'
   } else {
-    chrome.storage.sync.set({'showCopiedAlert': false})    
+    chrome.storage.local.set({'showCopiedAlert': false})    
     showCopiedAlertSetter.classList.add('inactive')
     showCopiedAlertonOffIndicator.innerHTML = 'off'
   }
@@ -62,7 +62,7 @@ const pasteOnMiddleClickSetter = document.getElementById('paste_on_middle_click_
 const pasteOnMiddleClickSwitch = document.getElementById('paste_on_middle_click_switch')
 const pasteOnMiddleClickonOffIndicator = document.getElementById('paste_on_middle_click_on_off_label')
 
-chrome.storage.sync.get('pasteOnMiddleClick', (result) => {  
+chrome.storage.local.get('pasteOnMiddleClick', (result) => {  
   if (result.pasteOnMiddleClick) {
     pasteOnMiddleClickSetter.classList.remove('inactive')
     pasteOnMiddleClickSwitch.checked = true
@@ -72,11 +72,11 @@ chrome.storage.sync.get('pasteOnMiddleClick', (result) => {
 
 pasteOnMiddleClickSwitch.addEventListener('change', (e) => {
   if (e.target.checked) {
-    chrome.storage.sync.set({'pasteOnMiddleClick': true})    
+    chrome.storage.local.set({'pasteOnMiddleClick': true})    
     pasteOnMiddleClickSetter.classList.remove('inactive')
     pasteOnMiddleClickonOffIndicator.innerHTML = 'on'
   } else {
-    chrome.storage.sync.set({'pasteOnMiddleClick': false})    
+    chrome.storage.local.set({'pasteOnMiddleClick': false})    
     pasteOnMiddleClickSetter.classList.add('inactive')
     pasteOnMiddleClickonOffIndicator.innerHTML = 'off'
   }
@@ -87,7 +87,7 @@ const pasteOnDoubleClickSetter = document.getElementById('paste_on_double_click_
 const pasteOnDoubleClickSwitch = document.getElementById('paste_on_double_click_ctrl_switch')
 const pasteOnDoubleClickonOffIndicator = document.getElementById('paste_on_double_click_ctrl_on_off_label')
 
-chrome.storage.sync.get('pasteOnDoubleClick', (result) => {  
+chrome.storage.local.get('pasteOnDoubleClick', (result) => {  
   if (result.pasteOnDoubleClick) {
     pasteOnDoubleClickSetter.classList.remove('inactive')
     pasteOnDoubleClickSwitch.checked = true
@@ -97,11 +97,11 @@ chrome.storage.sync.get('pasteOnDoubleClick', (result) => {
 
 pasteOnDoubleClickSwitch.addEventListener('change', (e) => {
   if (e.target.checked) {
-    chrome.storage.sync.set({'pasteOnDoubleClick': true})    
+    chrome.storage.local.set({'pasteOnDoubleClick': true})    
     pasteOnDoubleClickSetter.classList.remove('inactive')
     pasteOnDoubleClickonOffIndicator.innerHTML = 'on'
   } else {
-    chrome.storage.sync.set({'pasteOnDoubleClick': false})    
+    chrome.storage.local.set({'pasteOnDoubleClick': false})    
     pasteOnDoubleClickSetter.classList.add('inactive')
     pasteOnDoubleClickonOffIndicator.innerHTML = 'off'
   }
@@ -112,7 +112,7 @@ const trimSelectionSetter = document.getElementById('trim_selection_setter')
 const trimSelectionSwitch = document.getElementById('trim_selection_switch')
 const trimSelectionOnOffIndicator = document.getElementById('trim_selection_on_off_label')
 
-chrome.storage.sync.get('trimSelection', (result) => {  
+chrome.storage.local.get('trimSelection', (result) => {  
   if (result.trimSelection) {
     trimSelectionSetter.classList.remove('inactive')
     trimSelectionSwitch.checked = true
@@ -122,11 +122,11 @@ chrome.storage.sync.get('trimSelection', (result) => {
 
 trimSelectionSwitch.addEventListener('change', (e) => {
   if (e.target.checked) {
-    chrome.storage.sync.set({'trimSelection': true})    
+    chrome.storage.local.set({'trimSelection': true})    
     trimSelectionSetter.classList.remove('inactive')
     trimSelectionOnOffIndicator.innerHTML = 'on'
   } else {
-    chrome.storage.sync.set({'trimSelection': false})    
+    chrome.storage.local.set({'trimSelection': false})    
     trimSelectionSetter.classList.add('inactive')
     trimSelectionOnOffIndicator.innerHTML = 'off'
   }
@@ -137,7 +137,7 @@ const alwaysCleanFieldSetter = document.getElementById('always_clean_field_sette
 const alwaysCleanFieldSwitch = document.getElementById('always_clean_field_switch')
 const alwaysCleanFieldOnOffIndicator = document.getElementById('always_clean_field_on_off_label')
 
-chrome.storage.sync.get('alwaysCleanField', (result) => {  
+chrome.storage.local.get('alwaysCleanField', (result) => {  
   if (result.alwaysCleanField) {
     alwaysCleanFieldSetter.classList.remove('inactive')
     alwaysCleanFieldSwitch.checked = true
@@ -147,11 +147,11 @@ chrome.storage.sync.get('alwaysCleanField', (result) => {
 
 alwaysCleanFieldSwitch.addEventListener('change', (e) => {
   if (e.target.checked) {
-    chrome.storage.sync.set({'alwaysCleanField': true})    
+    chrome.storage.local.set({'alwaysCleanField': true})    
     alwaysCleanFieldSetter.classList.remove('inactive')
     alwaysCleanFieldOnOffIndicator.innerHTML = 'on'
   } else {
-    chrome.storage.sync.set({'alwaysCleanField': false})    
+    chrome.storage.local.set({'alwaysCleanField': false})    
     alwaysCleanFieldSetter.classList.add('inactive')
     alwaysCleanFieldOnOffIndicator.innerHTML = 'off'
   }

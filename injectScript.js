@@ -1,7 +1,7 @@
 const imageSource = chrome.runtime.getURL("./Res/copied.svg")
 
 const copySelectionToclipboard = (event) => {
-  chrome.storage.sync.get(['active', 'copyOnSelect', 'lastSelection', 'trimSelection'], (result) => {
+  chrome.storage.local.get(['active', 'copyOnSelect', 'lastSelection', 'trimSelection'], (result) => {
     if (result.active && result.copyOnSelect) {
       //console.log('Something selected:', window.getSelection())
       const selection = window.getSelection().toString()
@@ -11,8 +11,8 @@ const copySelectionToclipboard = (event) => {
         if (finalSelection === result.lastSelection) return
         navigator.clipboard.writeText(finalSelection).then(
           () => {
-            chrome.storage.sync.set({'lastSelection': finalSelection})
-            chrome.storage.sync.get('showCopiedAlert', (result) => {
+            chrome.storage.local.set({'lastSelection': finalSelection})
+            chrome.storage.local.get('showCopiedAlert', (result) => {
               if (result.showCopiedAlert) {
                 showCopiedAlert(event)
               }
@@ -22,8 +22,8 @@ const copySelectionToclipboard = (event) => {
             //console.log('NOT copied to clipboard:', e)
             //fallback for iframes
             document.execCommand('copy')
-            chrome.storage.sync.set({'lastSelection': finalSelection})
-            chrome.storage.sync.get('showCopiedAlert', (result) => {
+            chrome.storage.local.set({'lastSelection': finalSelection})
+            chrome.storage.local.get('showCopiedAlert', (result) => {
               if (result.showCopiedAlert) {
                 showCopiedAlert(event)
               }
@@ -64,7 +64,7 @@ const showCopiedAlert = (event) => {
 }
 
 const pasteOnDoubleClick = (e) => {
-  chrome.storage.sync.get(['active', 'pasteOnDoubleClick', 'alwaysCleanField'], (result) => {
+  chrome.storage.local.get(['active', 'pasteOnDoubleClick', 'alwaysCleanField'], (result) => {
     if (result.active && result.pasteOnDoubleClick) {
       setTimeout(() => {
         if (e.shiftKey && !result.alwaysCleanField || result.alwaysCleanField && !e.shiftKey) {
@@ -85,7 +85,7 @@ const isElementInput = (element) => {
 }
 
 const pasteOnMiddleClick = (e) => {
-  chrome.storage.sync.get(['active', 'pasteOnMiddleClick', 'alwaysCleanField'], (result) => {
+  chrome.storage.local.get(['active', 'pasteOnMiddleClick', 'alwaysCleanField'], (result) => {
     if (result.active && result.pasteOnMiddleClick && isElementInput(e.target)) {
       if (e.shiftKey && !result.alwaysCleanField || result.alwaysCleanField && !e.shiftKey) {
         e.target.value = ''
@@ -113,7 +113,7 @@ document.addEventListener('pointerdown', (e) => {
       e.preventDefault()
       e.stopPropagation()
     }
-    /* chrome.storage.sync.get(['active', 'pasteOnMiddleClick'], (result) => {
+    /* chrome.storage.local.get(['active', 'pasteOnMiddleClick'], (result) => {
       if (result.active && result.pasteOnMiddleClick && isElementInput(e.target)) {
         e.target.focus()
         e.preventDefault()
