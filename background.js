@@ -32,11 +32,11 @@ chrome.runtime.onInstalled.addListener((details) => {
         break;
      case 'update':
         chrome.storage.sync.get(['active', 'copyOnSelect', 'showCopiedAlert', 'pasteOnDoubleClick', 'pasteOnMiddleClick', 'lastSelection', 'trimSelection', 'alwaysCleanField'], (result) => {
-          let active = result.active ? result.active : true
-          let copyOnSelect = result.copyOnSelect ? result.copyOnSelect : true
-          let showCopiedAlert = result.showCopiedAlert ? result.showCopiedAlert : true
-          let pasteOnDoubleClick = result.pasteOnDoubleClick ? result.pasteOnDoubleClick : true
-          let pasteOnMiddleClick = result.pasteOnMiddleClick ? result.pasteOnMiddleClick : true
+          let active = typeof result.active == 'boolean' ? result.active : true
+          let copyOnSelect = typeof result.copyOnSelect == 'boolean' ? result.copyOnSelect : true
+          let showCopiedAlert = typeof result.showCopiedAlert == 'boolean' ? result.showCopiedAlert : true
+          let pasteOnDoubleClick = typeof result.pasteOnDoubleClick == 'boolean' ? result.pasteOnDoubleClick : true
+          let pasteOnMiddleClick = typeof result.pasteOnMiddleClick == 'boolean' ? result.pasteOnMiddleClick : true
           let lastSelection = result.lastSelection ? result.lastSelection : ""
           let trimSelection = result.trimSelection ? result.trimSelection : false
           let alwaysCleanField = result.alwaysCleanField ? result.alwaysCleanField : false
