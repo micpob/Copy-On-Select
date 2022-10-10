@@ -30,6 +30,6 @@
     "message": "Close this page"
   },
   "always_clean_field_option": {
-    "message": "Always clean field before pasting:"
+    "message": "Always clean field before pasting (hold shift to invert):"
   }
 }
