@@ -28,7 +28,9 @@
     {
       "js": ["injectScript.js"],
       "matches": ["*://*/*"],
-      "all_frames": true
+      "all_frames": true,
+      "run_at": "document_end",
+      "match_about_blank": true
     }
   ],
   "web_accessible_resources": [{
