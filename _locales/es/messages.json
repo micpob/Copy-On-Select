@@ -1,0 +1,35 @@
+{
+  "extension_name": {
+    "message": "Copy on Select"
+  },
+  "extension_description": {
+    "message": "Selecciona un texto y se copiará al instante en el portapapeles. ¡Pégalo con un solo clic!"
+  },
+  "options_page_title": {
+    "message": "Preferencias:"
+  },
+  "copy_on_select_option": {
+    "message": "Copia al seleccionar:"
+  },
+  "show_copied_alert_option": {
+    "message": "Mostrar alerta de '¡Copiado!':"
+  },
+  "paste_on_middle_click_option": {
+    "message": "Pegar al hacer clic central:"
+  },
+  "paste_on_double_click_ctrl_option": {
+    "message": "Pegar al hacer doble clic + Ctrl:"
+  },
+  "trim_selection_option": {
+    "message": "Quitar espacios al principio y final de la selección:"
+  },
+  "open_guide_button": {
+    "message": "Abrir la guía del usuario"
+  },
+  "close_page_button": {
+    "message": "Cerrar esta página"
+  },
+  "always_clean_field_option": {
+    "message": "Limpie siempre el campo antes de pegar (mantenga pulsada la tecla shift para invertir):"
+  }
+}
