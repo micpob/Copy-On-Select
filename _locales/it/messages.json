@@ -1,0 +1,35 @@
+{
+  "extension_name": {
+    "message": "Copy on Select"
+  },
+  "extension_description": {
+    "message": "Seleziona un testo e verrà immediatamente copiato! Incollalo con un clic!"
+  },
+  "options_page_title": {
+    "message": "Opzioni:"
+  },
+  "copy_on_select_option": {
+    "message": "Copia automaticamente quando selezioni:"
+  },
+  "show_copied_alert_option": {
+    "message": "Mostra avviso 'Copiato!':"
+  },
+  "paste_on_middle_click_option": {
+    "message": "Incolla con click medio (rotella mouse):"
+  },
+  "paste_on_double_click_ctrl_option": {
+    "message": "Incolla con doppio click + Ctrl:"
+  },
+  "trim_selection_option": {
+    "message": "Rimuovi spazi bianchi al principio e fine della selezione:"
+  },
+  "open_guide_button": {
+    "message": "Apri guida utente"
+  },
+  "close_page_button": {
+    "message": "Chiudi questa pagina"
+  },
+  "always_clean_field_option": {
+    "message": "Svuota automaticamente campo prima di incollare testo (tieni premuto Shift per non svuotare):"
+  }
+}
