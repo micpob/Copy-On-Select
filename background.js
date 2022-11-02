@@ -26,7 +26,19 @@ chrome.runtime.onInstalled.addListener((details) => {
           "trimSelection": false,
           "alwaysCleanField": false
         }, () => {
-          chrome.tabs.create({ url: chrome.runtime.getURL('guide.html') })
+          const browserLanguage = chrome.i18n.getUILanguage().slice(0, 2)
+          let guideFileName = 'guide.html'
+          switch (browserLanguage) {
+            case 'it':
+              guideFileName = 'guide-it.html'
+              break;
+            case 'es':
+              guideFileName = 'guide-es.html'
+              break;
+            default:
+              break;
+          }
+          chrome.tabs.create({ url: chrome.runtime.getURL(`${guideFileName}`) })
           setUpContextMenus()
         })
         break;
@@ -55,7 +67,6 @@ chrome.runtime.onInstalled.addListener((details) => {
             })
           })
         })
-        //chrome.tabs.create({ url: chrome.runtime.getURL('guide.html') })
         break;
      case 'chrome_update':
         break;

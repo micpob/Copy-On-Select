@@ -159,7 +159,21 @@ alwaysCleanFieldSwitch.addEventListener('change', (e) => {
 
 
 //Open user guide button
-document.getElementById('guide_button').addEventListener('click', () => { chrome.tabs.create({ url: chrome.runtime.getURL('guide.html') }) })
+document.getElementById('guide_button').addEventListener('click', () => { 
+  const browserLanguage = chrome.i18n.getUILanguage().slice(0, 2)
+  let guideFileName = 'guide.html'
+  switch (browserLanguage) {
+    case 'it':
+      guideFileName = 'guide-it.html'
+      break;
+    case 'es':
+      guideFileName = 'guide-es.html'
+      break;
+    default:
+      break;
+  }
+  chrome.tabs.create({ url: chrome.runtime.getURL(`${guideFileName}`) }) 
+})
 
 //Close page button
 document.getElementById('close').addEventListener('click', () => { window.close() })
