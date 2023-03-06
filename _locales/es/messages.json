@@ -6,7 +6,7 @@
     "message": "Selecciona un texto y se copiará al instante en el portapapeles. ¡Pégalo con un solo clic!"
   },
   "options_page_title": {
-    "message": "Preferencias:"
+    "message": "Opciones:"
   },
   "copy_on_select_option": {
     "message": "Copia al seleccionar:"
@@ -24,7 +24,7 @@
     "message": "Quitar espacios al principio y final de la selección:"
   },
   "open_guide_button": {
-    "message": "Abrir la guía del usuario"
+    "message": "Abrir guía de usuario"
   },
   "close_page_button": {
     "message": "Cerrar esta página"
