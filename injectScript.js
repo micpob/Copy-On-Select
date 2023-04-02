@@ -96,7 +96,7 @@ const pasteOnMiddleClick = (e) => {
 }
 
 document.addEventListener('pointerup', (e) => {
-  if (e.which == 2|| e.button == 4 ) {
+  if (e.which == 2 || e.button == 4 ) {
     pasteOnMiddleClick(e)
   } else if (e.ctrlKey || e.metaKey) {
     return
@@ -107,7 +107,7 @@ document.addEventListener('pointerup', (e) => {
 })
 
 document.addEventListener('pointerdown', (e) => {
-  if (e.which == 2|| e.button == 4) {
+  if (e.which == 2 || e.button == 4) {
     if (isElementInput(e.target)) {
       e.target.focus()
       e.preventDefault()
