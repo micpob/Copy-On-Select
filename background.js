@@ -43,7 +43,7 @@ chrome.runtime.onInstalled.addListener((details) => {
         })
         break;
      case 'update':
-        chrome.storage.sync.get(['active', 'copyOnSelect', 'showCopiedAlert', 'pasteOnDoubleClick', 'pasteOnMiddleClick', 'lastSelection', 'trimSelection', 'alwaysCleanField'], (result) => {
+        chrome.storage.local.get(['active', 'copyOnSelect', 'showCopiedAlert', 'pasteOnDoubleClick', 'pasteOnMiddleClick', 'lastSelection', 'trimSelection', 'alwaysCleanField'], (result) => {
           let active = typeof result.active == 'boolean' ? result.active : true
           let copyOnSelect = typeof result.copyOnSelect == 'boolean' ? result.copyOnSelect : true
           let showCopiedAlert = typeof result.showCopiedAlert == 'boolean' ? result.showCopiedAlert : true
