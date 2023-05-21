@@ -1,5 +1,5 @@
 chrome.runtime.onStartup.addListener( () => {
-  //chrome.storage.local.set({'lastSelection': ''})
+  chrome.storage.local.set({'lastSelection': ''})
   chrome.storage.local.get('active', (result) => {
     if (result.active) {
       chrome.action.setIcon({path: 'Res/Icons/icon64.png'})

@@ -1,17 +1,17 @@
 const imageSource = chrome.runtime.getURL("./Res/copied.svg")
 
 const copySelectionToclipboard = (event) => {
-  chrome.storage.local.get(['active', 'copyOnSelect', 'trimSelection'], (result) => {
+  chrome.storage.local.get(['active', 'copyOnSelect', 'lastSelection', 'trimSelection'], (result) => {
     if (result.active && result.copyOnSelect) {
       //console.log('Something selected:', window.getSelection())
       const selection = window.getSelection().toString()
       const selectionTrimmed = selection.trim()
       if (typeof selection !== 'undefined' && selectionTrimmed.length > 0) {
         const finalSelection = result.trimSelection ? selectionTrimmed : selection
-        //if (finalSelection === result.lastSelection) return
+        if (finalSelection === result.lastSelection) return
         navigator.clipboard.writeText(finalSelection).then(
           () => {
-            //chrome.storage.local.set({'lastSelection': finalSelection})
+            chrome.storage.local.set({'lastSelection': finalSelection})
             chrome.storage.local.get('showCopiedAlert', (result) => {
               if (result.showCopiedAlert) {
                 showCopiedAlert(event)
@@ -22,7 +22,7 @@ const copySelectionToclipboard = (event) => {
             //console.log('NOT copied to clipboard:', e)
             //fallback for iframes
             document.execCommand('copy')
-            //chrome.storage.local.set({'lastSelection': finalSelection})
+            chrome.storage.local.set({'lastSelection': finalSelection})
             chrome.storage.local.get('showCopiedAlert', (result) => {
               if (result.showCopiedAlert) {
                 showCopiedAlert(event)
