@@ -51,6 +51,9 @@ const showCopiedAlert = (event) => {
   alertContainer.style.opacity = '1'
   alertContainer.id = 'copy_on_select_popup_alert'
   
+  const alertAlreadyShowing = document.getElementById('copy_on_select_popup_alert')
+
+  if (alertAlreadyShowing == null) {
   document.body.appendChild(alertContainer)
 
   const popup = document.getElementById('copy_on_select_popup_alert')
@@ -60,7 +63,7 @@ const showCopiedAlert = (event) => {
   setTimeout(() => {
     document.body.removeChild(alertContainer)
   }, 400)
-
+  }
 }
 
 const pasteOnDoubleClick = (e) => {
