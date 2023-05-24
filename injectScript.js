@@ -50,52 +50,69 @@ const showCopiedAlert = (event) => {
   alertContainer.style.background = 'transparent'
   alertContainer.style.opacity = '1'
   alertContainer.id = 'copy_on_select_popup_alert'
-  
+
   const alertAlreadyShowing = document.getElementById('copy_on_select_popup_alert')
 
   if (alertAlreadyShowing == null) {
-  document.body.appendChild(alertContainer)
+    document.body.appendChild(alertContainer)
 
-  const popup = document.getElementById('copy_on_select_popup_alert')
-  popup.style.left = (window.innerWidth - event.pageX) < popup.offsetWidth || (document.documentElement.clientWidth - event.pageX) < popup.offsetWidth ? (event.pageX - popup.offsetWidth) + "px" : event.pageX + "px"
-  popup.style.top = event.pageY < 45 ? (event.pageY + 15) + "px" : (event.pageY - 40) + "px"
-
-  setTimeout(() => {
-    document.body.removeChild(alertContainer)
-  }, 400)
+    const popup = document.getElementById('copy_on_select_popup_alert')
+    popup.style.left = (window.innerWidth - event.pageX) < popup.offsetWidth || (document.documentElement.clientWidth - event.pageX) < popup.offsetWidth ? (event.pageX - popup.offsetWidth) + "px" : event.pageX + "px"
+    popup.style.top = event.pageY < 45 ? (event.pageY + 15) + "px" : (event.pageY - 40) + "px"
+  
+    setTimeout(() => {
+      document.body.removeChild(alertContainer)
+    }, 400)
   }
 }
 
-const pasteOnDoubleClick = (e) => {
-  chrome.storage.local.get(['active', 'pasteOnDoubleClick', 'alwaysCleanField'], (result) => {
-    if (result.active && result.pasteOnDoubleClick) {
-      setTimeout(() => {
-        if (e.shiftKey && !result.alwaysCleanField || result.alwaysCleanField && !e.shiftKey) {
-          e.target.value = ''
-        }
+const pasteContent = (e) => {
+  chrome.storage.local.get(['alwaysCleanField'], (result) => {
+    if (e.shiftKey && !result.alwaysCleanField || result.alwaysCleanField && !e.shiftKey || e.metaKey && !result.alwaysCleanField || result.alwaysCleanField && !e.metaKey) {
+      e.target.value = ''
+      e.target.innerText = ''
+      if (e.target instanceof HTMLDivElement || e.target instanceof HTMLParagraphElement) {
+        if (isEditableElement(e.target.parentElement)) {
+            e.target.parentElement.value = ''
+            e.target.parentElement.innerText = ''
+          } 
         document.execCommand('paste')
+      } else {
+        document.execCommand('paste')
+      }
+    } else {
+      document.execCommand('paste')
+    }
+  })
+}
+
+const pasteOnDoubleClick = (e) => {
+  chrome.storage.local.get(['active', 'pasteOnDoubleClick'], (result) => {
+    if (result.active && result.pasteOnDoubleClick && isEditableElement(e.target)) {
+      setTimeout(() => {
+        pasteContent(e)
       }, 100)
     }
   })  
 }
 
-const isElementInput = (element) => {
-  if (element.nodeName == 'INPUT' || element.nodeName == 'TEXTAREA' || element.isContentEditable) {
-    return true
-  } else {
-    return false
-  }
-}
-
 const pasteOnMiddleClick = (e) => {
-  chrome.storage.local.get(['active', 'pasteOnMiddleClick', 'alwaysCleanField'], (result) => {
-    if (result.active && result.pasteOnMiddleClick && isElementInput(e.target)) {
-      if (e.shiftKey && !result.alwaysCleanField || result.alwaysCleanField && !e.shiftKey) {
-        e.target.value = ''
-      }
-      document.execCommand('paste')
+  chrome.storage.local.get(['active', 'pasteOnMiddleClick'], (result) => {
+    if (result.active && result.pasteOnMiddleClick && isEditableElement(e.target)) {
+      pasteContent(e)
     }
   })
+}
+
+const isEditableElement = (el) =>{
+  if (el instanceof HTMLElement && el.isContentEditable) return true
+  if (el instanceof HTMLInputElement) {
+    if (/text|email|number|password|search|tel|url/.test(el.type || '')) {
+      return !(el.disabled || el.readOnly)
+    }
+  }
+  if (el instanceof HTMLTextAreaElement) return !(el.disabled || el.readOnly)
+  return false
 }
 
 document.addEventListener('pointerup', (e) => {
@@ -106,23 +123,15 @@ document.addEventListener('pointerup', (e) => {
   } else {
     copySelectionToclipboard(e)
   }
-    
 })
 
 document.addEventListener('pointerdown', (e) => {
   if (e.which == 2 || e.button == 4) {
-    if (isElementInput(e.target)) {
+    if (isEditableElement(e.target)) {
       e.target.focus()
       e.preventDefault()
       e.stopPropagation()
     }
-    /* chrome.storage.local.get(['active', 'pasteOnMiddleClick'], (result) => {
-      if (result.active && result.pasteOnMiddleClick && isElementInput(e.target)) {
-        e.target.focus()
-        e.preventDefault()
-        e.stopPropagation()
-      }
-    }) */
   }
 })
 
