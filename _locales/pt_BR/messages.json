@@ -1,0 +1,35 @@
+{
+  "extension_name": {
+    "message": "Copy on Select"
+  },
+  "extension_description": {
+    "message": "Selecione um texto e ele será instantaneamente copiado! Cole-o com um clique!"
+  },
+  "options_page_title": {
+    "message": "Opções:"
+  },
+  "copy_on_select_option": {
+    "message": "Copiar automaticamente ao selecionar:"
+  },
+  "show_copied_alert_option": {
+    "message": "Mostrar alerta de 'Copiado!':"
+  },
+  "paste_on_middle_click_option": {
+    "message": "Colar com o clique do meio:"
+  },
+  "paste_on_double_click_ctrl_option": {
+    "message": "Colar com um clique duplo + Ctrl:"
+  },
+  "trim_selection_option": {
+    "message": "Remover espaços em branco no início e no final da seleção:"
+  },
+  "open_guide_button": {
+    "message": "Abrir o guia do usuário"
+  },
+  "close_page_button": {
+    "message": "Fechar esta página"
+  },
+  "always_clean_field_option": {
+    "message": "Sempre limpe o campo antes de colar (mantenha pressionada a tecla shift para inverter):"
+  }
+}
