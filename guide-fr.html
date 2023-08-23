@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Guide de l'utilisateur de Copy on Select</title>
+  <link rel="shortcut icon" type="image/png" href="Res/Icons/icon32.png"/>
+  <link rel="stylesheet" type="text/css" href="guide.css">
+</head>
+<body>
+  <main>
+    <!-- <h1>Welcome to Copy on Select!</h1> -->
+    <img src="Res/logo.svg" alt="copy on select logo" width="380">
+    <h2>Comment cela fonctionne-t-il ?</h2> 
+    <hr>
+    <h3>CAVEATS</h3>
+    <h4>L'extension ne fonctionne pas en:</h4>
+    <ul>
+      <li>les pages dont l'URL commence par le mot "chrome", par exemple chrome://extensions/ ou chrome://settings/. Il s'agit d'un comportement standard pour toutes les extensions.</li>   
+      <li>la page Nouvel onglet (la page qui s'ouvre lorsque vous cliquez sur le signe + dans Chrome). Comme indiqué ci-dessus, il s'agit de la norme pour toutes les extensions Chrome.</li>   
+      <li>la barre d'adresse du navigateur (parce qu'elle est située en dehors de la fenêtre de navigation).</li>   
+    </ul>
+    <hr>
+    <h3>COPIER<h3>
+    <img src="Res/gifs/selection.gif" alt="auto copy on selection" width="336">
+    <ul>
+      <li>Sélectionnez un texte et il sera copié automatiquement.</li>    
+      <li>Pour annuler la fonctionnalité, maintenez la touche Ctrl (Commande sur Mac) enfoncée pendant la sélection du texte.</li>    
+      <li>Un bref avertissement "Copié !" s'affiche chaque fois qu'une nouvelle sélection est effectuée. Cet avertissement peut être désactivé dans la section <a class="option-page-link" href="#">Options</a>.</li>    
+    </ul>
+    <hr>
+    <h3>COLLER</h3>
+    <h4>Méthode 1: en utilisant le bouton central.</h4>
+    <img src="Res/gifs/middle_click.gif" alt="auto paste on middle click" width="439">
+    <ul>
+      <li>En cliquant au centre (sur la molette de la souris), le texte copié sera automatiquement collé.</li>    
+      <li>Si vous maintenez la touche Maj enfoncée tout en cliquant au centre, le champ dans lequel vous collez sera vidé de tout contenu préexistant avant d'être collé.</li>    
+      <!-- <li>If you want to bypass the auto-pasting on middle click, hold down the Ctrl key (Command on Mac).</li>  -->
+      <li>Vous pouvez désactiver cette fonctionnalité dans la section <a class="option-page-link" href="#">Options</a>.</li>   
+      <li>Vous pouvez également choisir de toujours vider le champ avant de le coller, sans maintenir la touche Majuscule enfoncée. Activez cette option dans la section <a class="option-page-link" href="#">Options</a>.</li>   
+    </ul>
+    <h4>Méthode 2: par double-clic.</h4>
+    <img src="Res/gifs/double_click.gif" alt="auto paste on double click" width="439">
+    <ul>
+      <li>Un double-clic tout en maintenant la touche Ctrl enfoncée (Commande sur Mac) collera automatiquement le texte copié.</li>    
+      <li>Si vous maintenez la touche Majuscule enfoncée tout en double-cliquant, le champ sera vidé de tout contenu préexistant avant d'être collé.</li>  
+      <li>Vous pouvez désactiver cette fonctionnalité dans la section <a class="option-page-link" href="#">Options</a>.</li>
+    </ul>
+    <hr>
+    
+  </main>  
+</body>
+<script src="guide.js"></script>
+<script src="injectScript.js"></script>
+</html>

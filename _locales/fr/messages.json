@@ -1,0 +1,35 @@
+{
+  "extension_name": {
+    "message": "Copy on Select"
+  },
+  "extension_description": {
+    "message": "Sélectionnez du texte et il sera instantanément copié! Collez-le en un seul clic!"
+  },
+  "options_page_title": {
+    "message": "Options:"
+  },
+  "copy_on_select_option": {
+    "message": "Copier automatiquement lorsque vous sélectionnez:"
+  },
+  "show_copied_alert_option": {
+    "message": "Afficher l'alerte 'Copié!'"
+  },
+  "paste_on_middle_click_option": {
+    "message": "Coller sur le clic central:"
+  },
+  "paste_on_double_click_ctrl_option": {
+    "message": "Coller au double clic + Ctrl:"
+  },
+  "trim_selection_option": {
+    "message": "Supprimer les espaces vides au début et à la fin de la sélection:"
+  },
+  "open_guide_button": {
+    "message": "Ouvrir le guide de l'utilisateur"
+  },
+  "close_page_button": {
+    "message": "Fermer cette page"
+  },
+  "always_clean_field_option": {
+    "message": "Toujours vider le champ avant de coller (maintenir la touche Maj pour inverser) :"
+  }
+}

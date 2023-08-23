@@ -23,6 +23,9 @@ chrome.contextMenus.onClicked.addListener((clickData) => {
       case 'pt':
         guideFileName = 'guide-pt.html'
         break;
+      case 'fr':
+        guideFileName = 'guide-fr.html'
+        break;  
       default:
         break;
     }
