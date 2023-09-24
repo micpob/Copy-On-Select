@@ -27,19 +27,19 @@ chrome.runtime.onInstalled.addListener((details) => {
           "alwaysCleanField": false
         }, () => {
           const browserLanguage = chrome.i18n.getUILanguage().slice(0, 2)
-          let guideFileName = 'guide.html'
+          let guideFileName = 'welcome.html'
           switch (browserLanguage) {
             case 'it':
-              guideFileName = 'guide-it.html'
+              guideFileName = 'welcome-it.html'
               break;
             case 'es':
-              guideFileName = 'guide-es.html'
+              guideFileName = 'welcome-es.html'
               break;
             case 'pt':
-              guideFileName = 'guide-pt.html'
+              guideFileName = 'welcome-pt.html'
               break;  
             case 'fr':
-              guideFileName = 'guide-fr.html'
+              guideFileName = 'welcome-fr.html'
               break;  
             default:
               break;

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Copy on Select welcome page</title>
+  <link rel="shortcut icon" type="image/png" href="Res/Icons/icon32.png"/>
+  <link rel="stylesheet" type="text/css" href="guide.css">
+</head>
+<body>
+  <main>
+    <img src="Res/logo.svg" alt="copy on select logo" width="380">
+    <h1>Welcome to Copy on Select!</h1>
+    <h1 class="enfasis">IMPORTANT: Please reload Chrome to activate the extension!</h1>
+    <hr>
+    <!-- <h2>How it works:</h2>  -->
+    <h3>CAVEATS</h3>
+    <h4>The extension does not work on:</h4>
+    <ul>
+      <li>pages whose URL starts with the word "chrome", for example chrome://extensions/ or chrome://settings/. This is standard behaviour for all extensions.</li>   
+      <li>the New Tab page (the page that opens when you click on the + sign in Chrome). Same as above, this is standard for all Chrome extensions.</li>   
+      <li>the browser's URL bar (because it is outside of the browsing window).</li>   
+    </ul>
+    <hr>
+    <h3>COPY</h3>
+    <img src="Res/gifs/selection.gif" alt="auto copy on selection" width="336">
+    <ul>
+      <li>Select some text and it will get copied automatically.</li>    
+      <li>To bypass the auto-copy hold down the Ctrl key (Command on Mac).</li>    
+      <li>You will see a short 'Copied!' alert every time you make a new selection. If you don't like it, you can deactivate it in the <a class="option-page-link" href="#">Options page</a>.</li>    
+    </ul>
+    <hr>
+    <h3>PASTE</h3>
+    <h4>Method 1: Using middle click.</h4>
+    <img src="Res/gifs/middle_click.gif" alt="auto paste on middle click" width="439">
+    <ul>
+      <li>Do a middle click (mouse wheel) on a input field and the copied text will be automatically pasted.</li>    
+      <li>Hold down the Shift key while middle clicking and the field will be emptied of any pre-existing content before pasting.</li>    
+      <!-- <li>If you want to bypass the auto-pasting on middle click, hold down the Ctrl key (Command on Mac).</li>  -->
+      <li>You can deactivate this functionality in the <a class="option-page-link" href="#">Options page</a>.</li>   
+      <li>You can also choose to always empty the field before pasting, without the need of holding down the Shift key. Activate this option in the <a class="option-page-link" href="#">Options page</a>.</li>   
+    </ul>
+    <h4>Method 2: Using double click.</h4>
+    <img src="Res/gifs/double_click.gif" alt="auto paste on double click" width="439">
+    <ul>
+      <li>Double click on a input field while holding down the Ctrl key (Command on Mac) and the copied text will be automatically pasted.</li>    
+      <li>Hold down the Shift key while double clicking and the field will be emptied of any pre-existing content before pasting.</li>  
+      <li>You can deactivate this functionality in the <a class="option-page-link" href="#">Options page</a>.</li>   
+    </ul>
+    <hr>
+    
+  </main>  
+</body>
+<script src="guide.js"></script>
+<script src="injectScript.js"></script>
+</html>
