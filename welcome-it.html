@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Benvenuti a Copy on Select</title>
+  <link rel="shortcut icon" type="image/png" href="Res/Icons/icon32.png"/>
+  <link rel="stylesheet" type="text/css" href="guide.css">
+</head>
+<body>
+  <main>
+    <img src="Res/logo.svg" alt="copy on select logo" width="380">
+    <h1>Benvenuti a Copy on Select!</h1>
+    <h1 class="enfasis">IMPORTANTE: ricarica Chrome per attivare l'estensione!</h1>
+    <hr>
+    <!-- <h2>Come funziona:</h2>  -->
+    <h3>CAVEATS</h3>
+    <h4>L'estensione non funziona in:</h4>
+    <ul>
+      <li>pagine il cui URL inizia con la parola "chrome", per esempio chrome://extensions/ o chrome://settings/. Questo è un comportamento standard per tutte le estensioni.</li>   
+      <li>la pagina Nuova Scheda (la pagina che si apre quando si fa click sul segno + in Chrome). Come sopra, questo è lo standard per tutte le estensioni di Chrome.</li>   
+      <li>la barra degli indirizzi del browser (perché si trova al di fuori della finestra di navigazione).</li>   
+    </ul>
+    <hr>
+    <h3>COPIARE</h3>
+    <img src="Res/gifs/selection.gif" alt="auto copy on selection" width="336">
+    <ul>
+      <li>Seleziona un testo e questo verrà copiato automaticamente.</li>    
+      <li>Per annullare la funzionalità, tieni premuto il tasto Ctrl (Command su Mac) mentre selezioni il testo.</li>    
+      <li>Verrà visualizzato un breve avviso "Copiato!" ogni volta che si effettua una nuova selezione. L'avviso si può disattivare nella pagina delle <a class="option-page-link" href="#">Opzioni</a>.</li>    
+    </ul>
+    <hr>
+    <h3>INCOLLARE</h3>
+    <h4>Metodo 1: utilizzando il tasto centrale.</h4>
+    <img src="Res/gifs/middle_click.gif" alt="auto paste on middle click" width="439">
+    <ul>
+      <li>Facendo click al centro (sulla rotella del mouse), il testo copiato verrà automaticamente incollato.</li>    
+      <li>Tenendo premuto il tasto Shift mentre si fa click al centro, il campo in cui si sta incollando verrà svuotato di qualsiasi contenuto preesistente prima di incollare.</li>    
+      <!-- <li>If you want to bypass the auto-pasting on middle click, hold down the Ctrl key (Command on Mac).</li>  -->
+      <li>Si può disattivare questa funzionalità nella pagina delle <a class="option-page-link" href="#">Opzioni</a>.</li>   
+      <li>È anche possibile scegliere di svuotare sempre il campo prima di incollare, senza dover tenere premuto il tasto Shift. Attiva questa opzione nella pagina delle <a class="option-page-link" href="#">Opzioni</a>.</li>   
+    </ul>
+    <h4>Metodo 2: utilizzando il doppio click.</h4>
+    <img src="Res/gifs/double_click.gif" alt="auto paste on double click" width="439">
+    <ul>
+      <li>Facendo doppio click mentre si tiene premuto premuto il tasto Ctrl (Command su Mac) il testo copiato verrà incollato automaticamente.</li>    
+      <li>Tenendo premuto il tasto Shift mentre si fa doppio click, il campo verrà svuotato di qualsiasi contenuto preesistente prima di incollare.</li>  
+      <li>Si può disattivare questa funzionalità nella pagina delle <a class="option-page-link" href="#">Opzioni</a>.</li>   
+    </ul>
+    <hr>
+    
+  </main>  
+</body>
+<script src="guide.js"></script>
+<script src="injectScript.js"></script>
+</html>
