@@ -14,7 +14,7 @@ If you keep the Shift key pressed while pasting, the field into which you are pa
 
 <br/>
 <div align="center" >
-  <img src="Docs/Screenshots/paste.png" alt="Copy on Select auto paste" width="450px" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);">
+  <img src="Docs/Screenshots/paste_EN.png" alt="Copy on Select auto paste" width="960px" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);">
   <br/>&nbsp;&nbsp;
   <p>Pasting with middle click:</p>
   <img src="Res/gifs/middle_click.gif" alt="Copy on Select auto copy" width="450px" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);">
