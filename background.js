@@ -41,6 +41,9 @@ chrome.runtime.onInstalled.addListener((details) => {
             case 'fr':
               guideFileName = 'welcome-fr.html'
               break;  
+            case 'de':
+              guideFileName = 'welcome-de.html'
+              break;  
             default:
               break;
           }

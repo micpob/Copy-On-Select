@@ -1,0 +1,35 @@
+{
+  "extension_name": {
+    "message": "Copy on Select"
+  },
+  "extension_description": {
+    "message": "Markieren Sie einen Text und er wird sofort in die Zwischenablage kopiert! Fügen Sie ihn mit einem Klick ein!"
+  },
+  "options_page_title": {
+    "message": "Optionen:"
+  },
+  "copy_on_select_option": {
+    "message": "Kopieren bei Auswahl:"
+  },
+  "show_copied_alert_option": {
+    "message": "Warnung 'Kopiert!' anzeigen:"
+  },
+  "paste_on_middle_click_option": {
+    "message": "Einfügen bei mittlerem Klick:"
+  },
+  "paste_on_double_click_ctrl_option": {
+    "message": "Einfügen bei Doppelklick + Strg:"
+  },
+  "trim_selection_option": {
+    "message": "Auswahl des Besatzes:"
+  },
+  "open_guide_button": {
+    "message": "Benutzerhandbuch öffnen"
+  },
+  "close_page_button": {
+    "message": "Diese Seite schließen"
+  },
+  "always_clean_field_option": {
+    "message": "Bereinigen Sie das Feld immer vor dem Einfügen (halten Sie die Umschalttaste zum Invertieren gedrückt):"
+  }
+}

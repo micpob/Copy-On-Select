@@ -175,6 +175,9 @@ document.getElementById('guide_button').addEventListener('click', () => {
     case 'fr':
       guideFileName = 'guide-fr.html'
       break;
+    case 'de':
+      guideFileName = 'guide-de.html'
+      break;
     default:
       break;
   }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Copy on Select Benutzerhandbuch</title>
+  <link rel="shortcut icon" type="image/png" href="Res/Icons/icon32.png"/>
+  <link rel="stylesheet" type="text/css" href="guide.css">
+</head>
+<body>
+  <main>
+    <!-- <h1>Welcome to Copy on Select!</h1> -->
+    <img src="Res/logo.svg" alt="copy on select logo" width="380">
+    <h2>Wie es funktioniert:</h2> 
+    <hr>
+    <h3>CAVEATS</h3>
+    <h4>Die Erweiterung funktioniert nicht auf:</h4>
+    <ul>
+      <li>Seiten, deren URL mit dem Wort "chrome" beginnt, zum Beispiel chrome://extensions/ oder chrome://settings/. Dies ist das Standardverhalten für alle Erweiterungen.</li>   
+      <li>die Seite "Neue Registerkarte" (die Seite, die sich öffnet, wenn Sie in Chrome auf das +-Zeichen klicken). Wie oben beschrieben, ist dies der Standard für alle Chrome-Erweiterungen.</li>   
+      <li>der URL-Leiste des Browsers (da sie sich außerhalb des Browsing-Fensters befindet).</li>   
+    </ul>
+    <hr>
+    <h3>KOPIEREN</h3>
+    <img src="Res/gifs/selection.gif" alt="auto copy on selection" width="336">
+    <ul>
+      <li>Markieren Sie einen Text und er wird automatisch kopiert.</li>    
+      <li>Um das automatische Kopieren zu umgehen, halten Sie die Strg-Taste (Befehlstaste auf dem Mac) gedrückt.</li>    
+      <li>Jedes Mal, wenn Sie eine neue Auswahl treffen, wird ein kurzer Hinweis "Kopiert!" angezeigt. Wenn Ihnen das nicht gefällt, können Sie es auf der <a class="option-page-link" href="#">Optionsseite</a> deaktivieren.</a>.</li>    
+    </ul>
+    <hr>
+    <h3>EINFÜGEN</h3>
+    <h4>Methode 1: Klicken Sie mit der mittleren Maustaste.</h4>
+    <img src="Res/gifs/middle_click.gif" alt="auto paste on middle click" width="439">
+    <ul>
+      <li>Machen Sie einen mittleren Klick (Mausrad) auf ein Eingabefeld und der kopierte Text wird automatisch eingefügt.</li>    
+      <li>Wenn Sie beim Klicken mit der mittleren Maustaste die Umschalttaste gedrückt halten, wird das Feld vor dem Einfügen von bereits vorhandenem Inhalt befreit.</li>    
+      <!-- <li>If you want to bypass the auto-pasting on middle click, hold down the Ctrl key (Command on Mac).</li>  -->
+      <li>Sie können diese Funktion auf der <a class="option-page-link" href="#">Optionsseite</a> deaktivieren.</a>.</li>   
+      <li>Sie können auch festlegen, dass das Feld vor dem Einfügen immer geleert wird, ohne dass Sie die Umschalttaste gedrückt halten müssen. Aktivieren Sie diese Option auf der Seite <a class="option-page-link" href="#">Optionen</a>.</li>   
+    </ul>
+    <h4>Methode 2: Mit Doppelklick.</h4>
+    <img src="Res/gifs/double_click.gif" alt="auto paste on double click" width="439">
+    <ul>
+      <li>Doppelklicken Sie auf ein Eingabefeld, während Sie die Strg-Taste (Befehlstaste auf Mac) gedrückt halten, und der kopierte Text wird automatisch eingefügt.</li>    
+      <li>Halten Sie die Umschalttaste gedrückt, während Sie doppelklicken, und das Feld wird vor dem Einfügen von bereits vorhandenem Inhalt befreit.</li>  
+      <li>Sie können diese Funktion auf der <a class="option-page-link" href="#">Optionsseite</a> deaktivieren.</a>.</li>   
+    </ul>
+    <hr>
+    
+  </main>  
+</body>
+<script src="guide.js"></script>
+<script src="injectScript.js"></script>
+</html>
