@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Copy on Select powitalna strona</title>
+  <link rel="shortcut icon" type="image/png" href="Res/Icons/icon32.png"/>
+  <link rel="stylesheet" type="text/css" href="guide.css">
+</head>
+<body>
+  <main>
+    <img src="Res/logo.svg" alt="copy on select logo" width="380">
+    <h1>Witamy w Copy on Select!</h1>
+    <h1 class="enfasis">WAŻNE: Aby aktywować rozszerzenie, należy przeładować Chrome!</h1>
+    <hr>
+    <!-- <h2>How it works:</h2>  -->
+    <h3>CAVEATS</h3>
+    <h4>Rozszerzenie nie działa na:</h4>
+    <ul>
+      <li>stron, których adres URL zaczyna się od słowa "chrome", na przykład chrome://extensions/ lub chrome://settings/. Jest to standardowe zachowanie dla wszystkich rozszerzeń.</li>   
+      <li>strona nowej karty (strona, która otwiera się po kliknięciu znaku + w Chrome). Podobnie jak powyżej, jest to standard dla wszystkich rozszerzeń Chrome.</li>   
+      <li>na pasku URL przeglądarki (ponieważ znajduje się poza oknem przeglądania).</li>   
+    </ul>
+    <hr>
+    <h3>KOPIOWANIE</h3>
+    <img src="Res/gifs/selection.gif" alt="auto copy on selection" width="336">
+    <ul>
+      <li>Zaznacz tekst, a zostanie on automatycznie skopiowany.</li>    
+      <li>Aby pominąć automatyczne kopiowanie, przytrzymaj klawisz Ctrl (Command na komputerach Mac).</li>    
+      <li>Za każdym razem, gdy dokonasz nowego wyboru, zobaczysz krótkie powiadomienie "Skopiowano!". Jeśli ci się to nie podoba, możesz to wyłączyć na stronie <a class="option-page-link" href="#">Opcje.</a>.</li>    
+    </ul>
+    <hr>
+    <h3>DO WKLEJENIA</h3>
+    <h4>Metoda 1: Kliknięcie środkowym przyciskiem myszy.</h4>
+    <img src="Res/gifs/middle_click.gif" alt="auto paste on middle click" width="439">
+    <ul>
+      <li>Kliknięcie środkowym przyciskiem myszy (kółkiem myszy) na polu wprowadzania spowoduje automatyczne wklejenie skopiowanego tekstu.</li>    
+      <li>Przytrzymanie wciśniętego klawisza Shift podczas środkowego kliknięcia spowoduje opróżnienie pola z istniejącej zawartości przed wklejeniem.</li>    
+      <!-- <li>If you want to bypass the auto-pasting on middle click, hold down the Ctrl key (Command on Mac).</li>  -->
+      <li>Funkcję tę można wyłączyć na stronie <a class="option-page-link" href="#">Opcje.</a>.</li>   
+      <li>Możesz także wybrać, aby zawsze opróżniać pole przed wklejeniem, bez konieczności przytrzymywania klawisza Shift. Aktywuj tę opcję w <a class="option-page-link" href="#">stronie opcji.</a>.</li>   
+    </ul>
+    <h4>Metoda 2: Podwójne kliknięcie.</h4>
+    <img src="Res/gifs/double_click.gif" alt="auto paste on double click" width="439">
+    <ul>
+      <li>Dwukrotne kliknięcie pola wprowadzania z wciśniętym klawiszem Ctrl (Command na Macu) spowoduje automatyczne wklejenie skopiowanego tekstu.</li>    
+      <li>Przytrzymanie wciśniętego klawisza Shift podczas dwukrotnego kliknięcia spowoduje opróżnienie pola z istniejącej zawartości przed wklejeniem.</li>  
+      <li>Funkcję tę można wyłączyć na stronie <a class="option-page-link" href="#">Opcje.</a>.</li>   
+    </ul>
+    <hr>
+    
+  </main>  
+</body>
+<script src="guide.js"></script>
+<script src="injectScript.js"></script>
+</html>

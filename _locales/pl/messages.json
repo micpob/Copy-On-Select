@@ -1,0 +1,35 @@
+{
+  "extension_name": {
+    "message": "Copy on Select"
+  },
+  "extension_description": {
+    "message": "Zaznacz tekst, a zostanie on natychmiast skopiowany do schowka! Wklej go jednym kliknięciem!"
+  },
+  "options_page_title": {
+    "message": "Opcje:"
+  },
+  "copy_on_select_option": {
+    "message": "Kopiuj po wybraniu:"
+  },
+  "show_copied_alert_option": {
+    "message": "Wyświetl alert 'Skopiowano!':"
+  },
+  "paste_on_middle_click_option": {
+    "message": "Wklej środkowym kliknięciem:"
+  },
+  "paste_on_double_click_ctrl_option": {
+    "message": "Wklej po dwukrotnym kliknięciu + Ctrl:"
+  },
+  "trim_selection_option": {
+    "message": "Wybór wykończenia:"
+  },
+  "open_guide_button": {
+    "message": "Otwórz instrukcję obsługi"
+  },
+  "close_page_button": {
+    "message": "Zamknij tę stronę"
+  },
+  "always_clean_field_option": {
+    "message": "Zawsze czyść pole przed wklejeniem (przytrzymaj shift, aby odwrócić):"
+  }
+}
