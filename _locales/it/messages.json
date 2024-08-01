@@ -31,5 +31,8 @@
   },
   "always_clean_field_option": {
     "message": "Svuota automaticamente campo prima di incollare testo (tieni premuto Shift per non svuotare):"
+  },
+  "context_menu_how_it_works": {
+    "message": "Guida all'uso"
   }
 }

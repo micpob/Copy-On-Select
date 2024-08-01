@@ -2,7 +2,7 @@ const setUpContextMenus = () => {
   chrome.contextMenus.removeAll(() => {
     const contextMenuHowItWorks = {
       id: 'howItWorks',
-      title: `How it works`,
+      title: chrome.i18n.getMessage("context_menu_how_it_works"),
       contexts: ['action']
     }
     chrome.contextMenus.create(contextMenuHowItWorks, () => chrome.runtime.lastError)

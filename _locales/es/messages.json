@@ -31,5 +31,8 @@
   },
   "always_clean_field_option": {
     "message": "Limpie siempre el campo antes de pegar (mantenga pulsada la tecla shift para invertir):"
+  },
+  "context_menu_how_it_works": {
+    "message": "Guía de usuario"
   }
 }

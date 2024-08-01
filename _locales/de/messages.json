@@ -31,5 +31,8 @@
   },
   "always_clean_field_option": {
     "message": "Bereinigen Sie das Feld immer vor dem Einfügen (halten Sie die Umschalttaste zum Invertieren gedrückt):"
+  },
+  "context_menu_how_it_works": {
+    "message": "Handbuch"
   }
 }

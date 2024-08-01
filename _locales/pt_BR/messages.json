@@ -31,5 +31,8 @@
   },
   "always_clean_field_option": {
     "message": "Sempre limpe o campo antes de colar (mantenha pressionada a tecla shift para inverter):"
+  },
+  "context_menu_how_it_works": {
+    "message": "Guia do usuário"
   }
 }

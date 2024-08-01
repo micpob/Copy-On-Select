@@ -31,5 +31,8 @@
   },
   "always_clean_field_option": {
     "message": "Zawsze czyść pole przed wklejeniem (przytrzymaj shift, aby odwrócić):"
+  },
+  "context_menu_how_it_works": {
+    "message": "Instrukcja obsługi"
   }
 }
