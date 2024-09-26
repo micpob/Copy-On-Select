@@ -45,9 +45,9 @@ button {
 }
 
 #guide_button {
-  margin: 15px 0;
+  margin: 0, 0, 15px, 0;
   background: darkblue;
-  margin-top: 5%;
+  /* margin-top: 5%; */
 }
 
 #guide_button:hover {
@@ -111,4 +111,8 @@ input:checked + .slider:before {
   -webkit-transform: translateX(13px);
   -ms-transform: translateX(13px);
   transform: translateX(13px);
+}
+
+#hold_shift_to_invert {
+  margin: 0;
 }
