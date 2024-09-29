@@ -30,9 +30,12 @@
     "message": "Diese Seite schließen"
   },
   "always_clean_field_option": {
-    "message": "Bereinigen Sie das Feld immer vor dem Einfügen (halten Sie die Umschalttaste zum Invertieren gedrückt):"
+    "message": "Bereinigen Sie das Feld immer vor dem Einfügen:"
   },
   "context_menu_how_it_works": {
     "message": "Handbuch"
+  },
+  "hold_shift_to_invert": {
+    "message": "(zum Invertieren Shift gedrückt halten)"
   }
 }

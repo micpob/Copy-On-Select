@@ -30,9 +30,12 @@
     "message": "Zamknij tę stronę"
   },
   "always_clean_field_option": {
-    "message": "Zawsze czyść pole przed wklejeniem (przytrzymaj shift, aby odwrócić):"
+    "message": "Zawsze czyść pole przed wklejeniem:"
   },
   "context_menu_how_it_works": {
     "message": "Instrukcja obsługi"
+  },
+  "hold_shift_to_invert": {
+    "message": "(przytrzymaj shift, aby odwrócić)"
   }
 }

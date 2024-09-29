@@ -30,9 +30,12 @@
     "message": "Fermer cette page"
   },
   "always_clean_field_option": {
-    "message": "Toujours vider le champ avant de coller (maintenir la touche Maj pour inverser) :"
+    "message": "Toujours vider le champ avant de coller:"
   },
   "context_menu_how_it_works": {
     "message": "Guide d'utilisation"
+  },
+  "hold_shift_to_invert": {
+    "message": "(maintenir la touche Maj pour inverser)"
   }
 }

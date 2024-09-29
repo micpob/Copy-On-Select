@@ -30,9 +30,12 @@
     "message": "Cerrar esta página"
   },
   "always_clean_field_option": {
-    "message": "Limpie siempre el campo antes de pegar (mantenga pulsada la tecla shift para invertir):"
+    "message": "Limpie siempre el campo antes de pegar:"
   },
   "context_menu_how_it_works": {
     "message": "Guía de usuario"
+  },
+  "hold_shift_to_invert": {
+    "message": "(pulsala la tecla shift para invertir)"
   }
 }

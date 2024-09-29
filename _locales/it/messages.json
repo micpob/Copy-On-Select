@@ -30,9 +30,12 @@
     "message": "Chiudi questa pagina"
   },
   "always_clean_field_option": {
-    "message": "Svuota automaticamente campo prima di incollare testo (tieni premuto Shift per non svuotare):"
+    "message": "Svuota automaticamente campo prima di incollare testo:"
   },
   "context_menu_how_it_works": {
     "message": "Guida all'uso"
+  },
+  "hold_shift_to_invert": {
+    "message": "(tieni premuto Shift per non svuotare)"
   }
 }

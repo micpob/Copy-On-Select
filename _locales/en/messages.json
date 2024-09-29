@@ -30,9 +30,12 @@
     "message": "Close this page"
   },
   "always_clean_field_option": {
-    "message": "Always clean field before pasting (hold shift to invert):"
+    "message": "Always clean field before pasting:"
   },
   "context_menu_how_it_works": {
     "message": "How it works"
+  },
+  "hold_shift_to_invert": {
+    "message": "(hold shift to invert)"
   }
 }
