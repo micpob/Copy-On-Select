@@ -19,6 +19,7 @@ chrome.runtime.onInstalled.addListener((details) => {
         chrome.storage.local.set({
           "active": true,
           "copyOnSelect": true,
+          "copyOnlyWithAlt": false,
           "showCopiedAlert": true,
           "pasteOnDoubleClick": true,
           "pasteOnMiddleClick": true,
@@ -55,9 +56,10 @@ chrome.runtime.onInstalled.addListener((details) => {
         })
         break;
      case 'update':
-        chrome.storage.local.get(['active', 'copyOnSelect', 'showCopiedAlert', 'pasteOnDoubleClick', 'pasteOnMiddleClick', 'lastSelection', 'trimSelection', 'alwaysCleanField'], (result) => {
+        chrome.storage.local.get(['active', 'copyOnSelect', 'copyOnlyWithAlt', 'showCopiedAlert', 'pasteOnDoubleClick', 'pasteOnMiddleClick', 'lastSelection', 'trimSelection', 'alwaysCleanField'], (result) => {
           let active = typeof result.active == 'boolean' ? result.active : true
           let copyOnSelect = typeof result.copyOnSelect == 'boolean' ? result.copyOnSelect : true
+          let copyOnlyWithAlt = result.copyOnlyWithAlt ? result.copyOnlyWithAlt : false
           let showCopiedAlert = typeof result.showCopiedAlert == 'boolean' ? result.showCopiedAlert : true
           let pasteOnDoubleClick = typeof result.pasteOnDoubleClick == 'boolean' ? result.pasteOnDoubleClick : true
           let pasteOnMiddleClick = typeof result.pasteOnMiddleClick == 'boolean' ? result.pasteOnMiddleClick : true
@@ -67,6 +69,7 @@ chrome.runtime.onInstalled.addListener((details) => {
           chrome.storage.local.set({
             "active": active,
             "copyOnSelect": copyOnSelect,
+            "copyOnlyWithAlt": copyOnlyWithAlt,
             "showCopiedAlert": showCopiedAlert,
             "pasteOnDoubleClick": pasteOnDoubleClick,
             "pasteOnMiddleClick": pasteOnMiddleClick,

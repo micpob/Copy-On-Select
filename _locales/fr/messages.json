@@ -37,5 +37,8 @@
   },
   "hold_shift_to_invert": {
     "message": "(maintenir la touche Maj pour inverser)"
+  },
+  "copy_only_with_alt_option": {
+    "message": "Copie automatique uniquement lorsque la touche Alt est enfoncée"
   }
 }

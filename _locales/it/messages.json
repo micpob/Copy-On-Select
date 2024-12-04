@@ -37,5 +37,8 @@
   },
   "hold_shift_to_invert": {
     "message": "(tieni premuto Shift per non svuotare)"
+  },
+  "copy_only_with_alt_option": {
+    "message": "Copia automatica solo quando si preme il tasto Alt"
   }
 }

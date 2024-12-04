@@ -37,5 +37,8 @@
   },
   "hold_shift_to_invert": {
     "message": "(pressiona a tecla shift para inverter)"
+  },
+  "copy_only_with_alt_option": {
+    "message": "Cópia automática somente quando a tecla Alt é pressionada"
   }
 }

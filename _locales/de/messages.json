@@ -37,5 +37,8 @@
   },
   "hold_shift_to_invert": {
     "message": "(zum Invertieren Shift gedrückt halten)"
+  },
+  "copy_only_with_alt_option": {
+    "message": "Automatisches Kopieren nur, wenn die Alt-Taste gedrückt wird"
   }
 }

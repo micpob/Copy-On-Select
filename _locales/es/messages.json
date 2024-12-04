@@ -36,6 +36,9 @@
     "message": "Guía de usuario"
   },
   "hold_shift_to_invert": {
-    "message": "(pulsala la tecla shift para invertir)"
+    "message": "(pulsa la tecla shift para invertir)"
+  },
+  "copy_only_with_alt_option": {
+    "message": "Copia automáticamente sólo cuando se pulsa la tecla Alt"
   }
 }

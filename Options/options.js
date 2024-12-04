@@ -32,6 +32,31 @@ copyOnSelectSwitch.addEventListener('change', (e) => {
   }
 })
 
+//Copy only if Alt is pressed
+const copyOnlyWithAltSetter = document.getElementById('copy_only_with_alt_setter')
+const copyOnlyWithAltSwitch = document.getElementById('copy_only_with_alt_switch')
+const copyOnlyWithAltOnOffIndicator = document.getElementById('copy_only_with_alt_label')
+
+chrome.storage.local.get('copyOnlyWithAlt', (result) => {  
+  if (result.copyOnlyWithAlt) {
+    copyOnlyWithAltSetter.classList.remove('inactive')
+    copyOnlyWithAltSwitch.checked = true
+    copyOnlyWithAltOnOffIndicator.innerHTML = 'on'
+  }
+})
+
+copyOnlyWithAltSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    chrome.storage.local.set({'copyOnlyWithAlt': true})    
+    copyOnlyWithAltSetter.classList.remove('inactive')
+    copyOnlyWithAltOnOffIndicator.innerHTML = 'on'
+  } else {
+    chrome.storage.local.set({'copyOnlyWithAlt': false})    
+    copyOnlyWithAltSetter.classList.add('inactive')
+    copyOnlyWithAltOnOffIndicator.innerHTML = 'off'
+  }
+})
+
 //Show 'copied!' popup alert
 const showCopiedAlertSetter = document.getElementById('show_copied_alert_setter')
 const showCopiedAlertSwitch = document.getElementById('show_copied_alert_switch')
