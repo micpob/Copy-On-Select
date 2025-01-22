@@ -40,5 +40,8 @@
   },
   "copy_only_with_alt_option": {
     "message": "Cópia automática somente quando a tecla Alt é pressionada"
+  },
+  "context_menu_my_other_extensions": {
+    "message": "Minhas outras extensões"
   }
 }

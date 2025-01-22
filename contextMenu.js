@@ -6,6 +6,21 @@ const setUpContextMenus = () => {
       contexts: ['action']
     }
     chrome.contextMenus.create(contextMenuHowItWorks, () => chrome.runtime.lastError)
+
+/*     const contextMenuDivisorLine = {
+      id: 'divisorLine',
+      title: '---------------',
+      contexts: ['action']
+    }
+    chrome.contextMenus.create(contextMenuDivisorLine, () => chrome.runtime.lastError)
+ */
+    const contextMenuMyOtherExtyensions = {
+      id: 'myOtherExtensions',
+      title: chrome.i18n.getMessage("context_menu_my_other_extensions"),
+      contexts: ['action']
+    }
+    chrome.contextMenus.create(contextMenuMyOtherExtyensions, () => chrome.runtime.lastError)
+
   })
 }
 
@@ -36,5 +51,9 @@ chrome.contextMenus.onClicked.addListener((clickData) => {
         break;
     }
       chrome.tabs.create({ url: chrome.runtime.getURL(`${guideFileName}`) })
+  }
+
+  if (clickData.menuItemId == 'myOtherExtensions') {
+    chrome.tabs.create({ url: 'https://chromewebstore.google.com/search/micpob' })
   }
 })
