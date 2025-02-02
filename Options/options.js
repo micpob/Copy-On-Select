@@ -182,6 +182,30 @@ alwaysCleanFieldSwitch.addEventListener('change', (e) => {
   }
 })
 
+//Bypass auto-copy on input fields
+const bypassCopyOnEditableElementsSetter = document.getElementById('bypass_copy_in_input_fields_setter')
+const bypassCopyOnEditableElementsSwitch = document.getElementById('bypass_copy_in_input_fields_switch')
+const bypassCopyOnEditableElementsOnOffIndicator = document.getElementById('bypass_copy_in_input_fields_label')
+
+chrome.storage.local.get('bypassCopyOnEditableElements', (result) => {  
+  if (result.bypassCopyOnEditableElements) {
+    bypassCopyOnEditableElementsSetter.classList.remove('inactive')
+    bypassCopyOnEditableElementsSwitch.checked = true
+    bypassCopyOnEditableElementsOnOffIndicator.innerHTML = 'on'
+  }
+})
+
+bypassCopyOnEditableElementsSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    chrome.storage.local.set({'bypassCopyOnEditableElements': true})    
+    bypassCopyOnEditableElementsSetter.classList.remove('inactive')
+    bypassCopyOnEditableElementsOnOffIndicator.innerHTML = 'on'
+  } else {
+    chrome.storage.local.set({'bypassCopyOnEditableElements': false})    
+    bypassCopyOnEditableElementsSetter.classList.add('inactive')
+    bypassCopyOnEditableElementsOnOffIndicator.innerHTML = 'off'
+  }
+})
 
 //Open user guide button
 document.getElementById('guide_button').addEventListener('click', () => { 

@@ -25,7 +25,8 @@ chrome.runtime.onInstalled.addListener((details) => {
           "pasteOnMiddleClick": true,
           "lastSelection": "",
           "trimSelection": false,
-          "alwaysCleanField": false
+          "alwaysCleanField": false,
+          "bypassCopyOnEditableElements": false
         }, () => {
           const browserLanguage = chrome.i18n.getUILanguage().slice(0, 2)
           let guideFileName = 'welcome.html'
@@ -56,7 +57,7 @@ chrome.runtime.onInstalled.addListener((details) => {
         })
         break;
      case 'update':
-        chrome.storage.local.get(['active', 'copyOnSelect', 'copyOnlyWithAlt', 'showCopiedAlert', 'pasteOnDoubleClick', 'pasteOnMiddleClick', 'lastSelection', 'trimSelection', 'alwaysCleanField'], (result) => {
+        chrome.storage.local.get(['active', 'copyOnSelect', 'copyOnlyWithAlt', 'showCopiedAlert', 'pasteOnDoubleClick', 'pasteOnMiddleClick', 'lastSelection', 'trimSelection', 'alwaysCleanField', 'bypassCopyOnEditableElements'], (result) => {
           let active = typeof result.active == 'boolean' ? result.active : true
           let copyOnSelect = typeof result.copyOnSelect == 'boolean' ? result.copyOnSelect : true
           let copyOnlyWithAlt = result.copyOnlyWithAlt ? result.copyOnlyWithAlt : false
@@ -66,6 +67,7 @@ chrome.runtime.onInstalled.addListener((details) => {
           let lastSelection = result.lastSelection ? result.lastSelection : ""
           let trimSelection = result.trimSelection ? result.trimSelection : false
           let alwaysCleanField = result.alwaysCleanField ? result.alwaysCleanField : false
+          let bypassCopyOnEditableElements = result.bypassCopyOnEditableElements ? result.bypassCopyOnEditableElements : false
           chrome.storage.local.set({
             "active": active,
             "copyOnSelect": copyOnSelect,
@@ -75,7 +77,8 @@ chrome.runtime.onInstalled.addListener((details) => {
             "pasteOnMiddleClick": pasteOnMiddleClick,
             "lastSelection": lastSelection,
             "trimSelection": trimSelection,
-            "alwaysCleanField": alwaysCleanField
+            "alwaysCleanField": alwaysCleanField,
+            "bypassCopyOnEditableElements": bypassCopyOnEditableElements
           }, () => {
             chrome.contextMenus.removeAll(() => {
               setUpContextMenus()

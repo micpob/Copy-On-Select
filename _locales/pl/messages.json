@@ -42,6 +42,7 @@
     "message": "Automatyczne kopiowanie tylko po naciśnięciu klawisza Alt"
   },
   "context_menu_my_other_extensions": {
-    "message": "Moje inne rozszerzenia"
+  "bypass_copy_in_input_fields_option": {
+    "message": "Pomijanie automatycznego kopiowania w polach wejściowych"
   }
 }

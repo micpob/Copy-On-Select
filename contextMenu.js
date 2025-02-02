@@ -7,13 +7,6 @@ const setUpContextMenus = () => {
     }
     chrome.contextMenus.create(contextMenuHowItWorks, () => chrome.runtime.lastError)
 
-/*     const contextMenuDivisorLine = {
-      id: 'divisorLine',
-      title: '---------------',
-      contexts: ['action']
-    }
-    chrome.contextMenus.create(contextMenuDivisorLine, () => chrome.runtime.lastError)
- */
     const contextMenuMyOtherExtyensions = {
       id: 'myOtherExtensions',
       title: chrome.i18n.getMessage("context_menu_my_other_extensions"),
