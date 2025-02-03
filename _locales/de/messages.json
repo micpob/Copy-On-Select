@@ -42,6 +42,8 @@
     "message": "Automatisches Kopieren nur, wenn die Alt-Taste gedrückt wird"
   },
   "context_menu_my_other_extensions": {
+    "message": "★★ Meine anderen Erweiterungen ★★"
+  },
   "bypass_copy_in_input_fields_option": {
     "message": "Auto-Kopieren in Eingabefeldern umgehen"
   }

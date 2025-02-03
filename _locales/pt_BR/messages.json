@@ -42,6 +42,8 @@
     "message": "Cópia automática somente quando a tecla Alt é pressionada"
   },
   "context_menu_my_other_extensions": {
+    "message": "★★ Minhas outras extensões ★★"
+  },
   "bypass_copy_in_input_fields_option": {
     "message": "Ignorar cópia automática em campos de entrada"
   }

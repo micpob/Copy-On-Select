@@ -42,6 +42,8 @@
     "message": "Auto copy only when Alt key is pressed"
   },
   "context_menu_my_other_extensions": {
+    "message": "★★ My other extensions ★★"
+  },
   "bypass_copy_in_input_fields_option": {
     "message": "Bypass auto copy in input fields"
   }
