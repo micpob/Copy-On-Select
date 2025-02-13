@@ -45,6 +45,7 @@
     "message": "★★ Altre estensioni mie ★★"
   },
   "bypass_copy_in_input_fields_option": {
-    "message": "Escludere la copia automatica nei campi di input"
+    "message": "Escludere la copia automatica nei campi di input:"
+  },
   }
 }

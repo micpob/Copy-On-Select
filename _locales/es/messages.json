@@ -45,6 +45,7 @@
     "message": "★★ Mis otras extensiones ★★"
   },
   "bypass_copy_in_input_fields_option": {
-    "message": "Evitar la copia automática en los campos de entrada"
+    "message": "Evitar la copia automática en los campos de entrada:"
+  },
   }
 }

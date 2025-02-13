@@ -45,6 +45,7 @@
     "message": "★★ Meine anderen Erweiterungen ★★"
   },
   "bypass_copy_in_input_fields_option": {
-    "message": "Auto-Kopieren in Eingabefeldern umgehen"
+    "message": "Auto-Kopieren in Eingabefeldern umgehen:"
+  },
   }
 }
