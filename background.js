@@ -26,7 +26,10 @@ chrome.runtime.onInstalled.addListener((details) => {
           "lastSelection": "",
           "trimSelection": false,
           "alwaysCleanField": false,
-          "bypassCopyOnEditableElements": false
+          "prependText": false,
+          "textToPrepend": '',
+          "postpendText": false,
+          "textToPostpend": ''
         }, () => {
           const browserLanguage = chrome.i18n.getUILanguage().slice(0, 2)
           let guideFileName = 'welcome.html'
@@ -57,7 +60,7 @@ chrome.runtime.onInstalled.addListener((details) => {
         })
         break;
      case 'update':
-        chrome.storage.local.get(['active', 'copyOnSelect', 'copyOnlyWithAlt', 'showCopiedAlert', 'pasteOnDoubleClick', 'pasteOnMiddleClick', 'lastSelection', 'trimSelection', 'alwaysCleanField', 'bypassCopyOnEditableElements'], (result) => {
+        chrome.storage.local.get(['active', 'copyOnSelect', 'copyOnlyWithAlt', 'showCopiedAlert', 'pasteOnDoubleClick', 'pasteOnMiddleClick', 'lastSelection', 'trimSelection', 'alwaysCleanField', 'bypassCopyOnEditableElements', 'prependText', 'textToPrepend', 'postpendText', 'textToPostpend'], (result) => {
           let active = typeof result.active == 'boolean' ? result.active : true
           let copyOnSelect = typeof result.copyOnSelect == 'boolean' ? result.copyOnSelect : true
           let copyOnlyWithAlt = result.copyOnlyWithAlt ? result.copyOnlyWithAlt : false
@@ -68,6 +71,10 @@ chrome.runtime.onInstalled.addListener((details) => {
           let trimSelection = result.trimSelection ? result.trimSelection : false
           let alwaysCleanField = result.alwaysCleanField ? result.alwaysCleanField : false
           let bypassCopyOnEditableElements = result.bypassCopyOnEditableElements ? result.bypassCopyOnEditableElements : false
+          let prependText = result.prependText ? result.prependText : false
+          let textToPrepend = result.textToPrepend && result.textToPrepend.length > 0 ? result.textToPrepend : ''
+          let postpendText = result.postpendText ? result.postpendText : false
+          let textToPostpend = result.textToPostpend && result.textToPostpend.length > 0 ? result.textToPostpend : ''
           chrome.storage.local.set({
             "active": active,
             "copyOnSelect": copyOnSelect,
@@ -78,7 +85,10 @@ chrome.runtime.onInstalled.addListener((details) => {
             "lastSelection": lastSelection,
             "trimSelection": trimSelection,
             "alwaysCleanField": alwaysCleanField,
-            "bypassCopyOnEditableElements": bypassCopyOnEditableElements
+            "prependText": prependText,
+            "textToPrepend": textToPrepend,  
+            "postpendText": postpendText,
+            "textToPostpend": textToPostpend  
           }, () => {
             chrome.contextMenus.removeAll(() => {
               setUpContextMenus()

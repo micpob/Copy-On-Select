@@ -47,5 +47,10 @@
   "bypass_copy_in_input_fields_option": {
     "message": "Auto-Kopieren in Eingabefeldern umgehen:"
   },
+  "prepend_text_option": {
+    "message": "Fügen Sie diesen Text vor dem kopierten Inhalt ein:"
+  },
+  "postpend_text_option": {
+    "message": "Fügen Sie diesen Text nach dem kopierten Inhalt ein:"
   }
 }

@@ -47,5 +47,10 @@
   "bypass_copy_in_input_fields_option": {
     "message": "Bypass auto copy in input fields:"
   },
+  "prepend_text_option": {
+    "message": "Add this text before the copied content:"
+  },
+  "postpend_text_option": {
+    "message": "Add this text after the copied content:"
   }
 }

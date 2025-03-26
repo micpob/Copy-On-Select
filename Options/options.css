@@ -116,3 +116,10 @@ input:checked + .slider:before {
 #hold_shift_to_invert {
   margin: 0;
 }
+
+input[type=text] {
+  width: 150px;
+  border: none;
+  border:solid 1px #ccc;
+  border-radius: 4px;
+}

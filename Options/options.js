@@ -207,6 +207,83 @@ bypassCopyOnEditableElementsSwitch.addEventListener('change', (e) => {
   }
 })
 
+//Prepend text option switch
+const prependTextSetter = document.getElementById('prepend_text_setter')
+const prependTextSwitch = document.getElementById('prepend_text_switch')
+const prependTextOnOffIndicator = document.getElementById('prepend_text_label')
+
+chrome.storage.local.get('prependText', (result) => {  
+  if (result.prependText) {
+    prependTextSetter.classList.remove('inactive')
+    prependTextSwitch.checked = true
+    prependTextOnOffIndicator.innerHTML = 'on'
+  }
+})
+
+prependTextSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    chrome.storage.local.set({'prependText': true})    
+    prependTextSetter.classList.remove('inactive')
+    prependTextOnOffIndicator.innerHTML = 'on'
+  } else {
+    chrome.storage.local.set({'prependText': false})    
+    prependTextSetter.classList.add('inactive')
+    prependTextOnOffIndicator.innerHTML = 'off'
+  }
+})
+
+//Prepend text input field
+const prependTextInputField = document.getElementById('prepend_text_input_field')
+
+chrome.storage.local.get('textToPrepend', (result) => {  
+  if (result.textToPrepend) {
+    prependTextInputField.value = result.textToPrepend
+  }
+})
+
+prependTextInputField.addEventListener('input', (e) => {
+  chrome.storage.local.set({'textToPrepend': e.target.value})    
+})
+
+//Postpend text option switch
+const postpendTextSetter = document.getElementById('postpend_text_setter')
+const postpendTextSwitch = document.getElementById('postpend_text_switch')
+const postpendTextOnOffIndicator = document.getElementById('postpend_text_label')
+
+chrome.storage.local.get('postpendText', (result) => {  
+  if (result.postpendText) {
+    postpendTextSetter.classList.remove('inactive')
+    postpendTextSwitch.checked = true
+    postpendTextOnOffIndicator.innerHTML = 'on'
+  }
+})
+
+postpendTextSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    chrome.storage.local.set({'postpendText': true})    
+    postpendTextSetter.classList.remove('inactive')
+    postpendTextOnOffIndicator.innerHTML = 'on'
+  } else {
+    chrome.storage.local.set({'postpendText': false})    
+    postpendTextSetter.classList.add('inactive')
+    postpendTextOnOffIndicator.innerHTML = 'off'
+  }
+})
+
+//Postpend text input field
+const postpendTextInputField = document.getElementById('postpend_text_input_field')
+
+chrome.storage.local.get('textToPostpend', (result) => {  
+  if (result.textToPostpend) {
+    postpendTextInputField.value = result.textToPostpend
+  }
+})
+
+postpendTextInputField.addEventListener('input', (e) => {
+  chrome.storage.local.set({'textToPostpend': e.target.value})    
+})
+
+
 //Open user guide button
 document.getElementById('guide_button').addEventListener('click', () => { 
   const browserLanguage = chrome.i18n.getUILanguage().slice(0, 2)
