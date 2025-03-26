@@ -4,8 +4,7 @@ const copySelectionToclipboard = (event) => {
   chrome.storage.local.get(['active', 'copyOnSelect', 'lastSelection', 'trimSelection', 'copyOnlyWithAlt', 'bypassCopyOnEditableElements', 'prependText', 'textToPrepend', 'postpendText', 'textToPostpend'], (result) => {
     if (result.active && result.copyOnSelect) {
       if (result.copyOnlyWithAlt && !event.altKey) return
-      if (result.bypassCopyOnEditableElements && isEditableElement(event.target)) return
-      //console.log('Something selected:', window.getSelection())
+      if (result.bypassCopyOnEditableElements && isEditableElement(document.activeElement)) return
       const selection = window.getSelection().toString()
       const selectionTrimmed = selection.trim()
       if (typeof selection !== 'undefined' && selectionTrimmed.length > 0) {
