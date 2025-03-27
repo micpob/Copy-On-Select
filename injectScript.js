@@ -71,7 +71,7 @@ const showCopiedAlert = (event) => {
 
 const pasteContent = (e) => {
   chrome.storage.local.get(['alwaysCleanField'], (result) => {
-    if (e.shiftKey && !result.alwaysCleanField || result.alwaysCleanField && !e.shiftKey || e.metaKey && !result.alwaysCleanField || result.alwaysCleanField && !e.metaKey) {
+    if (e.shiftKey && !result.alwaysCleanField || result.alwaysCleanField && !e.shiftKey) {
       e.target.value = ''
       e.target.innerText = ''
       if (e.target instanceof HTMLDivElement || e.target instanceof HTMLParagraphElement) {
