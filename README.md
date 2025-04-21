@@ -38,6 +38,6 @@ HTML, CSS, Javascript (Extensions APIs)
 
 &nbsp;
   
-### Chrome Web Store link: 
+### Install here: 
 
-https://chrome.google.com/webstore/detail/copy-on-select/kdfngfkkopeoejecmfejlcpblohnbael
+<a href="https://chrome.google.com/webstore/detail/copy-on-select/kdfngfkkopeoejecmfejlcpblohnbael"><img src="Docs/Screenshots/chrome-web-store-logo-large.png" alt="Chrome web store button" width="250px" ></a>
