@@ -21,7 +21,7 @@
     "message": "Paste on double click + Ctrl:"
   },
   "trim_selection_option": {
-    "message": "Trim selection:"
+    "message": "Remove white spaces at the beginning and end of the selection:"
   },
   "open_guide_button": {
     "message": "Open user guide"

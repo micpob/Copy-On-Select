@@ -21,7 +21,7 @@
     "message": "Einfügen bei Doppelklick + Strg:"
   },
   "trim_selection_option": {
-    "message": "Auswahl des Besatzes:"
+    "message": "Leerzeichen am Anfang und Ende der Auswahl entfernen:"
   },
   "open_guide_button": {
     "message": "Benutzerhandbuch öffnen"

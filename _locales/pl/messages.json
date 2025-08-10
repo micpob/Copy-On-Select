@@ -21,7 +21,7 @@
     "message": "Wklej po dwukrotnym kliknięciu + Ctrl:"
   },
   "trim_selection_option": {
-    "message": "Wybór wykończenia:"
+    "message": "Usuń spacje na początku i końcu zaznaczenia:"
   },
   "open_guide_button": {
     "message": "Otwórz instrukcję obsługi"
