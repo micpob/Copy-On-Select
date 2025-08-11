@@ -123,3 +123,45 @@ input[type=text] {
   border:solid 1px #ccc;
   border-radius: 4px;
 }
+
+.option-container {
+  display: flex;
+}
+
+.option-container h2 {
+  display: inline;
+  margin: 0;
+}
+
+.info-button {
+  align-self: center;
+  position: relative;
+  display: inline-block;
+  background-image: url(../Res/question_mark.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgb(0, 98, 255);
+  outline: none;
+  border: 1px solid rgb(190, 190, 190);
+  vertical-align: bottom;
+}
+
+.info-button-popup {
+  background-color: white;
+  position: absolute;
+  display: none;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: white;
+  color: black;
+  font-size: medium;
+  /* min-height: 200px;*/
+  min-width: 200px; 
+  z-index: 10;
+  border: 8px solid black;
+  line-height: 1;
+}

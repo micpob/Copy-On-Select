@@ -315,3 +315,18 @@ document.getElementById('guide_button').addEventListener('click', () => {
 
 //Close page button
 document.getElementById('close').addEventListener('click', () => { window.close() })
+
+//info buttons
+const infoButtons = document.getElementsByClassName('info-button')
+for(let i = 0; i < infoButtons.length; i++) {
+  infoButtons[i].addEventListener('pointerover', (e) => {
+    const popupId = `${e.target.id}_popup`
+    const popup = document.getElementById(popupId)
+    if (popup) popup.style.display = 'block'
+  })
+  infoButtons[i].addEventListener('pointerleave', (e) => {
+    const popupId = `${e.target.id}_popup`
+    const popup = document.getElementById(popupId)
+    if (popup) popup.style.display = 'none'
+  })
+}
