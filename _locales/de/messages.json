@@ -52,5 +52,8 @@
   },
   "postpend_text_option": {
     "message": "Fügen Sie diesen Text nach dem kopierten Inhalt ein:"
+  },
+  "info_button_clean_field_popup": {
+    "message": "Wenn Sie Text in ein Eingabefeld oder einen Textbereich einfügen und das Feld bereits Text enthält, wird der gesamte bereits vorhandene Text vor dem Einfügen des neuen Textes gelöscht."
   }
 }

@@ -52,5 +52,8 @@
   },
   "postpend_text_option": {
     "message": "Añade este texto después del contenido copiado:"
+  },
+  "info_button_clean_field_popup": {
+    "message": "Si pegas texto en un campo de entrada o área de texto y el campo ya contiene texto, todo el texto ya presente se eliminará antes de pegar el nuevo texto."
   }
 }

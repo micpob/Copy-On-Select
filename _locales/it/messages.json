@@ -52,5 +52,8 @@
   },
   "postpend_text_option": {
     "message": "Aggiungere questo testo dopo il contenuto copiato:"
+  },
+  "info_button_clean_field_popup": {
+    "message": "Se incolli del testo in una casella o in un'area di testo e la casella contiene già del testo, tutto il testo già presente verrà cancellato prima di incollare il nuovo testo."
   }
 }

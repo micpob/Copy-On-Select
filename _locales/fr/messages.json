@@ -52,5 +52,8 @@
   },
   "postpend_text_option": {
     "message": "Ajoutez ce texte après le contenu copié :"
+  },
+  "info_button_clean_field_popup": {
+    "message": "Si vous collez du texte dans un champ de saisie ou une zone de texte et que le champ contient déjà du texte, tout le texte déjà présent sera supprimé avant le collage du nouveau texte."
   }
 }
