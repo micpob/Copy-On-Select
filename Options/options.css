@@ -140,7 +140,8 @@ input[type=text] {
   background-image: url(../Res/question_mark.svg);
   background-repeat: no-repeat;
   background-position: center;
-  margin-left: 10px;
+  margin-left: 20px;
+  margin-bottom: auto;
   width: 25px;
   height: 25px;
   border-radius: 50%;
