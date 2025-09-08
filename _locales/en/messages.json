@@ -9,7 +9,7 @@
     "message": "Copy on Select options:"
   },
   "copy_on_select_option": {
-    "message": "Copy on select:"
+    "message": "Copy on select (hold Ctrl to bypass):"
   },
   "show_copied_alert_option": {
     "message": "Show 'Copied!' alert:"

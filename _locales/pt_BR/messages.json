@@ -9,7 +9,7 @@
     "message": "Opções:"
   },
   "copy_on_select_option": {
-    "message": "Copiar automaticamente ao selecionar:"
+    "message": "Copiar automaticamente ao selecionar (clique em Ctrl para ignorar):"
   },
   "show_copied_alert_option": {
     "message": "Mostrar alerta de 'Copiado!':"
