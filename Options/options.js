@@ -37,6 +37,10 @@ const copyOnlyWithAltSetter = document.getElementById('copy_only_with_alt_setter
 const copyOnlyWithAltSwitch = document.getElementById('copy_only_with_alt_switch')
 const copyOnlyWithAltOnOffIndicator = document.getElementById('copy_only_with_alt_label')
 
+const bypassCopyWithAltSetter = document.getElementById('bypass_copy_with_alt_setter')
+const bypassCopyWithAltSwitch = document.getElementById('bypass_copy_with_alt_switch')
+const bypassCopyWithAltOnOffIndicator = document.getElementById('bypass_copy_with_alt_label')
+
 chrome.storage.local.get('copyOnlyWithAlt', (result) => {  
   if (result.copyOnlyWithAlt) {
     copyOnlyWithAltSetter.classList.remove('inactive')
@@ -47,13 +51,41 @@ chrome.storage.local.get('copyOnlyWithAlt', (result) => {
 
 copyOnlyWithAltSwitch.addEventListener('change', (e) => {
   if (e.target.checked) {
-    chrome.storage.local.set({'copyOnlyWithAlt': true})    
+    chrome.storage.local.set({'copyOnlyWithAlt': true, 'bypassCopyWithAlt': false})    
     copyOnlyWithAltSetter.classList.remove('inactive')
     copyOnlyWithAltOnOffIndicator.innerHTML = 'on'
+    bypassCopyWithAltSetter.classList.add('inactive')
+    bypassCopyWithAltOnOffIndicator.innerHTML = 'off'
+    bypassCopyWithAltSwitch.checked = false
   } else {
     chrome.storage.local.set({'copyOnlyWithAlt': false})    
     copyOnlyWithAltSetter.classList.add('inactive')
     copyOnlyWithAltOnOffIndicator.innerHTML = 'off'
+  }
+})
+
+//Bypass copy if Alt is pressed
+
+chrome.storage.local.get('bypassCopyWithAlt', (result) => {  
+  if (result.bypassCopyWithAlt) {
+    bypassCopyWithAltSetter.classList.remove('inactive')
+    bypassCopyWithAltSwitch.checked = true
+    bypassCopyWithAltOnOffIndicator.innerHTML = 'on'
+  }
+})
+
+bypassCopyWithAltSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    chrome.storage.local.set({'bypassCopyWithAlt': true, 'copyOnlyWithAlt': false})    
+    bypassCopyWithAltSetter.classList.remove('inactive')
+    bypassCopyWithAltOnOffIndicator.innerHTML = 'on'
+    copyOnlyWithAltSetter.classList.add('inactive')
+    copyOnlyWithAltOnOffIndicator.innerHTML = 'off'
+    copyOnlyWithAltSwitch.checked = false
+  } else {
+    chrome.storage.local.set({'bypassCopyWithAlt': false})    
+    bypassCopyWithAltSetter.classList.add('inactive')
+    bypassCopyWithAltOnOffIndicator.innerHTML = 'off'
   }
 })
 

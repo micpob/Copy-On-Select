@@ -1,9 +1,10 @@
 const imageSource = chrome.runtime.getURL("./Res/copied.svg")
 
 const copySelectionToclipboard = (event) => {
-  chrome.storage.local.get(['active', 'copyOnSelect', 'lastSelection', 'trimSelection', 'copyOnlyWithAlt', 'bypassCopyOnEditableElements', 'prependText', 'textToPrepend', 'postpendText', 'textToPostpend'], (result) => {
+  chrome.storage.local.get(['active', 'copyOnSelect', 'lastSelection', 'trimSelection', 'copyOnlyWithAlt', 'bypassCopyOnEditableElements', 'prependText', 'textToPrepend', 'postpendText', 'textToPostpend', 'bypassCopyWithAlt'], (result) => {
     if (result.active && result.copyOnSelect) {
       if (result.copyOnlyWithAlt && !event.altKey) return
+      if (result.bypassCopyWithAlt && event.altKey) return
       if (result.bypassCopyOnEditableElements && isEditableElement(document.activeElement)) return
       const selection = window.getSelection().toString()
       const selectionTrimmed = selection.trim()

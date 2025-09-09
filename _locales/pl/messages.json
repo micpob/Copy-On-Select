@@ -55,5 +55,8 @@
   },
   "info_button_clean_field_popup": {
     "message": "Jeśli wkleisz tekst w polu wprowadzania danych lub polu tekstowym, a pole to zawiera już jakiś tekst, cały istniejący tekst zostanie usunięty przed wklejeniem nowego tekstu."
+  },
+  "bypass_copy_with_alt_option": {
+    "message": "Nie kopiuj przy wciśniętym klawiszu Alt:"
   }
 }
