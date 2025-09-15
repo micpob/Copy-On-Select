@@ -58,5 +58,14 @@
   },
   "bypass_copy_with_alt_option": {
     "message": "Nie kopiuj przy wciśniętym klawiszu Alt:"
+  },
+  "url_type_complete": {
+    "message": "complete URL (https://en.wikipedia.org/wiki/Pizza)"
+  },
+  "url_type_partial": {
+    "message": "partial URL (en.wikipedia.org/wiki/Pizza)"
+  },
+  "url_type_domain": {
+    "message": "just domain name (en.wikipedia.org)"
   }
 }

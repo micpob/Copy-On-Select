@@ -89,6 +89,40 @@ bypassCopyWithAltSwitch.addEventListener('change', (e) => {
   }
 })
 
+//Include URL of page in selection
+const includeUrlSetter = document.getElementById('include_url_setter')
+const includeUrlSwitch = document.getElementById('include_url_switch')
+const includeUrlonOffIndicator = document.getElementById('include_url_on_off_label')
+
+chrome.storage.local.get('includeUrl', (result) => {  
+  if (result.includeUrl) {
+    includeUrlSetter.classList.remove('inactive')
+    includeUrlSwitch.checked = true
+    includeUrlonOffIndicator.innerHTML = 'on'
+  }
+})
+
+includeUrlSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    chrome.storage.local.set({'includeUrl': true})    
+    includeUrlSetter.classList.remove('inactive')
+    includeUrlonOffIndicator.innerHTML = 'on'
+  } else {
+    chrome.storage.local.set({'includeUrl': false})    
+    includeUrlSetter.classList.add('inactive')
+    includeUrlonOffIndicator.innerHTML = 'off'
+  }
+})
+
+document.querySelectorAll("input[name='url_type']").forEach((radioButton) => {
+  chrome.storage.local.get('urlType', (result) => {  
+    if (result.urlType && radioButton.value == result.urlType) radioButton.checked = true 
+  })
+  radioButton.addEventListener('change', (e) => {
+    chrome.storage.local.set({'urlType': e.target.value}) 
+  })
+})
+
 //Show 'copied!' popup alert
 const showCopiedAlertSetter = document.getElementById('show_copied_alert_setter')
 const showCopiedAlertSwitch = document.getElementById('show_copied_alert_switch')

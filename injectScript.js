@@ -1,7 +1,7 @@
 const imageSource = chrome.runtime.getURL("./Res/copied.svg")
 
 const copySelectionToclipboard = (event) => {
-  chrome.storage.local.get(['active', 'copyOnSelect', 'lastSelection', 'trimSelection', 'copyOnlyWithAlt', 'bypassCopyOnEditableElements', 'prependText', 'textToPrepend', 'postpendText', 'textToPostpend', 'bypassCopyWithAlt'], (result) => {
+  chrome.storage.local.get(['active', 'copyOnSelect', 'lastSelection', 'trimSelection', 'copyOnlyWithAlt', 'bypassCopyOnEditableElements', 'prependText', 'textToPrepend', 'postpendText', 'textToPostpend', 'bypassCopyWithAlt', 'includeUrl', 'urlType'], (result) => {
     if (result.active && result.copyOnSelect) {
       if (result.copyOnlyWithAlt && !event.altKey) return
       if (result.bypassCopyWithAlt && event.altKey) return
@@ -12,6 +12,10 @@ const copySelectionToclipboard = (event) => {
         let finalSelection = result.trimSelection ? selectionTrimmed : selection
         finalSelection = result.prependText ? `${result.textToPrepend}${finalSelection}` : finalSelection
         finalSelection = result.postpendText ? `${finalSelection}${result.textToPostpend}` : finalSelection
+        if (result.includeUrl && result.urlType) {
+          const url = result.urlType == 'complete' ? window.location.href : result.urlType == 'domain' ? window.location.hostname.replace(/^(?:www\.)?/i, '') : window.location.href.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '')
+          finalSelection = `${finalSelection} (${url})`
+        }
         if (finalSelection === result.lastSelection) return
         navigator.clipboard.writeText(finalSelection).then(
           () => {

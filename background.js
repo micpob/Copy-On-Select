@@ -21,6 +21,8 @@ chrome.runtime.onInstalled.addListener((details) => {
           "copyOnSelect": true,
           "copyOnlyWithAlt": false,
           "bypassCopyWithAlt": false,
+          "includeUrl": false,
+          "urlType": 'complete',
           "showCopiedAlert": true,
           "pasteOnDoubleClick": true,
           "pasteOnMiddleClick": true,
@@ -67,6 +69,8 @@ chrome.runtime.onInstalled.addListener((details) => {
           let copyOnSelect = typeof result.copyOnSelect == 'boolean' ? result.copyOnSelect : true
           let copyOnlyWithAlt = result.copyOnlyWithAlt ? result.copyOnlyWithAlt : false
           let bypassCopyWithAlt = result.bypassCopyWithAlt ? result.bypassCopyWithAlt : false
+          let includeUrl = result.includeUrl ? result.includeUrl : false
+          let urlType = result.urlType ? result.urlType : 'complete'
           let showCopiedAlert = typeof result.showCopiedAlert == 'boolean' ? result.showCopiedAlert : true
           let pasteOnDoubleClick = typeof result.pasteOnDoubleClick == 'boolean' ? result.pasteOnDoubleClick : true
           let pasteOnMiddleClick = typeof result.pasteOnMiddleClick == 'boolean' ? result.pasteOnMiddleClick : true
@@ -83,6 +87,8 @@ chrome.runtime.onInstalled.addListener((details) => {
             "copyOnSelect": copyOnSelect,
             "copyOnlyWithAlt": copyOnlyWithAlt,
             "bypassCopyWithAlt": bypassCopyWithAlt,
+            "includeUrl": includeUrl,
+            "urlType": urlType,
             "showCopiedAlert": showCopiedAlert,
             "pasteOnDoubleClick": pasteOnDoubleClick,
             "pasteOnMiddleClick": pasteOnMiddleClick,

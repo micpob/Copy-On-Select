@@ -166,3 +166,7 @@ input[type=text] {
   border: 8px solid black;
   line-height: 1;
 }
+
+input[type="radio"] {
+  cursor: pointer;
+}
