@@ -54,7 +54,7 @@
     "message": "Añade este texto después del contenido copiado:"
   },
   "info_button_clean_field_popup": {
-    "message": "Si pegas texto en un campo de entrada o área de texto y el campo ya contiene texto, todo el texto ya presente se eliminará antes de pegar el nuevo texto."
+    "message": "Si pega en un campo que ya contiene texto, todo el texto del campo se eliminará antes de pegar el nuevo texto."
   },
   "bypass_copy_with_alt_option": {
     "message": "No copiar cuando se pulsa la tecla Alt:"
