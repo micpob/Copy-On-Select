@@ -1,10 +1,12 @@
 const imageSource = chrome.runtime.getURL("./Res/copied.svg")
 
 const copySelectionToclipboard = (event) => {
-  chrome.storage.local.get(['active', 'copyOnSelect', 'lastSelection', 'trimSelection', 'copyOnlyWithAlt', 'bypassCopyOnEditableElements', 'prependText', 'textToPrepend', 'postpendText', 'textToPostpend', 'bypassCopyWithAlt', 'includeUrl', 'urlType'], (result) => {
+  chrome.storage.local.get(['active', 'copyOnSelect', 'lastSelection', 'trimSelection', 'copyOnlyWithAlt', 'bypassCopyOnEditableElements', 'prependText', 'textToPrepend', 'postpendText', 'textToPostpend', 'bypassCopyWithAlt', 'includeUrl', 'urlType', 'bypassCopyWithCtrl'], (result) => {
     if (result.active && result.copyOnSelect) {
       if (result.copyOnlyWithAlt && !event.altKey) return
       if (result.bypassCopyWithAlt && event.altKey) return
+      if (result.bypassCopyWithCtrl && event.ctrlKey) return
+      if (result.bypassCopyWithCtrl && event.metaKey) return
       if (result.bypassCopyOnEditableElements && isEditableElement(document.activeElement)) return
       const selection = window.getSelection().toString()
       const selectionTrimmed = selection.trim()
@@ -126,8 +128,6 @@ const isEditableElement = (el) =>{
 document.addEventListener('pointerup', (e) => {
   if (e.which == 2 || e.button == 4 ) {
     pasteOnMiddleClick(e)
-  } else if (e.ctrlKey || e.metaKey) {
-    return
   } else {
     copySelectionToclipboard(e)
   }

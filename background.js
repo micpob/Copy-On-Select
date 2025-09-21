@@ -19,6 +19,7 @@ chrome.runtime.onInstalled.addListener((details) => {
         chrome.storage.local.set({
           "active": true,
           "copyOnSelect": true,
+          "bypassCopyWithCtrl": true,
           "copyOnlyWithAlt": false,
           "bypassCopyWithAlt": false,
           "includeUrl": false,
@@ -64,9 +65,10 @@ chrome.runtime.onInstalled.addListener((details) => {
         })
         break;
      case 'update':
-        chrome.storage.local.get(['active', 'copyOnSelect', 'copyOnlyWithAlt', 'showCopiedAlert', 'pasteOnDoubleClick', 'pasteOnMiddleClick', 'lastSelection', 'trimSelection', 'alwaysCleanField', 'bypassCopyOnEditableElements', 'prependText', 'textToPrepend', 'postpendText', 'textToPostpend', 'bypassCopyWithAlt', 'includeUrl', 'urlType'], (result) => {
+        chrome.storage.local.get(['active', 'copyOnSelect', 'copyOnlyWithAlt', 'showCopiedAlert', 'pasteOnDoubleClick', 'pasteOnMiddleClick', 'lastSelection', 'trimSelection', 'alwaysCleanField', 'bypassCopyOnEditableElements', 'prependText', 'textToPrepend', 'postpendText', 'textToPostpend', 'bypassCopyWithAlt', 'includeUrl', 'urlType', 'bypassCopyWithCtrl'], (result) => {
           let active = typeof result.active == 'boolean' ? result.active : true
           let copyOnSelect = typeof result.copyOnSelect == 'boolean' ? result.copyOnSelect : true
+          let bypassCopyWithCtrl = typeof result.bypassCopyWithCtrl == 'boolean' ? result.bypassCopyWithCtrl : true
           let copyOnlyWithAlt = result.copyOnlyWithAlt ? result.copyOnlyWithAlt : false
           let bypassCopyWithAlt = result.bypassCopyWithAlt ? result.bypassCopyWithAlt : false
           let includeUrl = result.includeUrl ? result.includeUrl : false
@@ -85,6 +87,7 @@ chrome.runtime.onInstalled.addListener((details) => {
           chrome.storage.local.set({
             "active": active,
             "copyOnSelect": copyOnSelect,
+            "bypassCopyWithCtrl": bypassCopyWithCtrl,
             "copyOnlyWithAlt": copyOnlyWithAlt,
             "bypassCopyWithAlt": bypassCopyWithAlt,
             "includeUrl": includeUrl,

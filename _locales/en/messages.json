@@ -9,7 +9,7 @@
     "message": "Copy on Select options:"
   },
   "copy_on_select_option": {
-    "message": "Copy on select (hold Ctrl to bypass):"
+    "message": "Copy on select:"
   },
   "show_copied_alert_option": {
     "message": "Show 'Copied!' alert:"
@@ -70,5 +70,9 @@
   },
   "url_type_domain": {
     "message": "just domain name (en.wikipedia.org)"
+  },
+  "bypass_type_ctrl": {
+    "message": "bypass by Ctrl"
+  },
   }
 }

@@ -32,6 +32,24 @@ copyOnSelectSwitch.addEventListener('change', (e) => {
   }
 })
 
+//Bypass copy if Ctrl is pressed
+const bypassCopyWithCtrl = document.getElementById('bypass_type_ctrl')
+
+chrome.storage.local.get('bypassCopyWithCtrl', (result) => {  
+  if (result.bypassCopyWithCtrl) {
+    bypassCopyWithCtrl.checked = true
+  }
+})
+
+bypassCopyWithCtrl.addEventListener('click', (e) => {
+  if (e.target.checked) {
+    chrome.storage.local.set({'bypassCopyWithCtrl': true})    
+  } else {
+    chrome.storage.local.set({'bypassCopyWithCtrl': false})    
+  }
+})
+
+
 //Copy only if Alt is pressed
 const copyOnlyWithAltSetter = document.getElementById('copy_only_with_alt_setter')
 const copyOnlyWithAltSwitch = document.getElementById('copy_only_with_alt_switch')
