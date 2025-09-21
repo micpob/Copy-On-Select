@@ -56,16 +56,17 @@
   "info_button_clean_field_popup": {
     "message": "Si pega en un campo que ya contiene texto, todo el texto del campo se eliminará antes de pegar el nuevo texto."
   },
-  "bypass_copy_with_alt_option": {
-    "message": "No copiar cuando se pulsa la tecla Alt:"
+  "include_url_option": {
+    "message": "Incluir la URL de la página en la selección:"
   },
   "url_type_complete": {
-    "message": "complete URL (https://en.wikipedia.org/wiki/Pizza)"
+    "message": "URL completa (https://en.wikipedia.org/wiki/Pizza)"
   },
   "url_type_partial": {
-    "message": "partial URL (en.wikipedia.org/wiki/Pizza)"
+    "message": "URL parcial (en.wikipedia.org/wiki/Pizza)"
   },
   "url_type_domain": {
-    "message": "just domain name (en.wikipedia.org)"
+    "message": "solo nombre de dominio (en.wikipedia.org)"
+  },
   }
 }
