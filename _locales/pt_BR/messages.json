@@ -68,5 +68,8 @@
   "url_type_domain": {
     "message": "só nome de domínio (en.wikipedia.org)"
   },
+  "bypass_copy_with_ctrl_option": {
+    "message": "ignorar com Ctrl"
+  },
   }
 }

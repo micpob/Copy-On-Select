@@ -71,8 +71,8 @@
   "url_type_domain": {
     "message": "just domain name (en.wikipedia.org)"
   },
-  "bypass_type_ctrl": {
-    "message": "bypass by Ctrl"
+  "bypass_copy_with_ctrl_option": {
+    "message": "bypass with Ctrl"
   },
   }
 }

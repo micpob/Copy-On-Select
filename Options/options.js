@@ -33,7 +33,7 @@ copyOnSelectSwitch.addEventListener('change', (e) => {
 })
 
 //Bypass copy if Ctrl is pressed
-const bypassCopyWithCtrl = document.getElementById('bypass_type_ctrl')
+const bypassCopyWithCtrl = document.getElementById('bypass_with_ctrl')
 
 chrome.storage.local.get('bypassCopyWithCtrl', (result) => {  
   if (result.bypassCopyWithCtrl) {
