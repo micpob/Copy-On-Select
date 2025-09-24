@@ -170,3 +170,8 @@ input[type=text] {
 input[type="radio"], input[type="checkbox"] {
   cursor: pointer;
 }
+
+.visible-checkbox, .visible-radio {
+  height: 15px;
+  margin-top: 10px;
+}
