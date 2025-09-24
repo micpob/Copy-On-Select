@@ -71,5 +71,7 @@
   "bypass_copy_with_ctrl_option": {
     "message": "Umgehen mit Strg"
   },
+  "bypass_copy_with_alt_option": {
+    "message": "Umgehen mit Alttest"
   }
 }

@@ -71,5 +71,7 @@
   "bypass_copy_with_ctrl_option": {
     "message": "contourner avec Ctrl"
   },
+  "bypass_copy_with_alt_option": {
+    "message": "contourner avec Alt"
   }
 }

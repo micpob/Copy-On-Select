@@ -71,5 +71,7 @@
   "bypass_copy_with_ctrl_option": {
     "message": "bypass con Ctrl"
   },
+  "bypass_copy_with_alt_option": {
+    "message": "bypass con Alt"
   }
 }
