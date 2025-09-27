@@ -56,9 +56,6 @@
   "info_button_clean_field_popup": {
     "message": "If you paste in a field that already contains some text, all text in the field will be deleted before pasting the new text."
   },
-  "bypass_copy_with_alt_option": {
-    "message": "Do not copy when Alt key is pressed:"
-  },
   "include_url_option": {
     "message": "Include URL of page in selection:"
   },

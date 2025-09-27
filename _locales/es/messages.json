@@ -9,7 +9,7 @@
     "message": "Opciones:"
   },
   "copy_on_select_option": {
-    "message": "Copia al seleccionar (pulsa la tecla Ctrl para omitir):"
+    "message": "Copia al seleccionar:"
   },
   "show_copied_alert_option": {
     "message": "Mostrar alerta de '¡Copiado!':"

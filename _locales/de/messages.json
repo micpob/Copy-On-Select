@@ -9,7 +9,7 @@
     "message": "Optionen:"
   },
   "copy_on_select_option": {
-    "message": "Kopieren bei Auswahl (Strg gedrückt halten, um zu überspringen):"
+    "message": "Kopieren bei Auswahl:"
   },
   "show_copied_alert_option": {
     "message": "Warnung 'Kopiert!' anzeigen:"
