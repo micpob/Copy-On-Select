@@ -18,7 +18,7 @@
     "message": "Incolla con click medio (rotella mouse):"
   },
   "paste_on_double_click_ctrl_option": {
-    "message": "Incolla con doppio click + Ctrl:"
+    "message": "Incolla con doppio click + Ctrl (⌘ su Mac):"
   },
   "trim_selection_option": {
     "message": "Rimuovi spazi bianchi al principio e fine della selezione:"
@@ -69,7 +69,7 @@
     "message": "solo nome di dominio (en.wikipedia.org)"
   },
   "bypass_copy_with_ctrl_option": {
-    "message": "bypass con Ctrl"
+    "message": "bypass con Ctrl (⌘ su Mac)"
   },
   "bypass_copy_with_alt_option": {
     "message": "bypass con Alt"

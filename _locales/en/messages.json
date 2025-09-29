@@ -18,7 +18,7 @@
     "message": "Paste on middle click:"
   },
   "paste_on_double_click_ctrl_option": {
-    "message": "Paste on double click + Ctrl:"
+    "message": "Paste on double click + Ctrl (⌘ on Mac):"
   },
   "trim_selection_option": {
     "message": "Remove white spaces at the beginning and end of the selection:"
@@ -69,7 +69,7 @@
     "message": "just domain name (en.wikipedia.org)"
   },
   "bypass_copy_with_ctrl_option": {
-    "message": "bypass with Ctrl"
+    "message": "bypass with Ctrl (⌘ on Mac)"
   },
   "bypass_copy_with_alt_option": {
     "message": "bypass with Alt"

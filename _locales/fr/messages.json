@@ -18,7 +18,7 @@
     "message": "Coller sur le clic central:"
   },
   "paste_on_double_click_ctrl_option": {
-    "message": "Coller au double clic + Ctrl:"
+    "message": "Coller au double clic + Ctrl (⌘ sur Mac):"
   },
   "trim_selection_option": {
     "message": "Supprimer les espaces vides au début et à la fin de la sélection:"
@@ -69,7 +69,7 @@
     "message": "nom de domaine uniquement (en.wikipedia.org)"
   },
   "bypass_copy_with_ctrl_option": {
-    "message": "contourner avec Ctrl"
+    "message": "contourner avec Ctrl (⌘ sur Mac)"
   },
   "bypass_copy_with_alt_option": {
     "message": "contourner avec Alt"

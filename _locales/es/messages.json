@@ -18,7 +18,7 @@
     "message": "Pegar al hacer clic central:"
   },
   "paste_on_double_click_ctrl_option": {
-    "message": "Pegar al hacer doble clic + Ctrl:"
+    "message": "Pegar al hacer doble clic + Ctrl (⌘ en Mac):"
   },
   "trim_selection_option": {
     "message": "Quitar espacios al principio y final de la selección:"
@@ -69,7 +69,7 @@
     "message": "solo nombre de dominio (en.wikipedia.org)"
   },
   "bypass_copy_with_ctrl_option": {
-    "message": "omitir con Ctrl"
+    "message": "omitir con Ctrl (⌘ en Mac)"
   },
   "bypass_copy_with_alt_option": {
     "message": "omitir con Alt"

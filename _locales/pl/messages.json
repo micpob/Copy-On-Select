@@ -18,7 +18,7 @@
     "message": "Wklej środkowym kliknięciem:"
   },
   "paste_on_double_click_ctrl_option": {
-    "message": "Wklej po dwukrotnym kliknięciu + Ctrl:"
+    "message": "Wklej po dwukrotnym kliknięciu + Ctrl (⌘ na Mac):"
   },
   "trim_selection_option": {
     "message": "Usuń spacje na początku i końcu zaznaczenia:"
@@ -69,7 +69,7 @@
     "message": "tylko nazwa domeny (en.wikipedia.org)"
   },
   "bypass_copy_with_ctrl_option": {
-    "message": "obejść za pomocą klawisza Ctrl"
+    "message": "obejść za pomocą klawisza Ctrl (⌘ na Mac)"
   },
   "bypass_copy_with_alt_option": {
     "message": "obejść za pomocą klawisza Alt"

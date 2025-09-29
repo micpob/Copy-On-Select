@@ -18,7 +18,7 @@
     "message": "Einfügen bei mittlerem Klick:"
   },
   "paste_on_double_click_ctrl_option": {
-    "message": "Einfügen bei Doppelklick + Strg:"
+    "message": "Einfügen bei Doppelklick + Strg (⌘ auf Mac):"
   },
   "trim_selection_option": {
     "message": "Leerzeichen am Anfang und Ende der Auswahl entfernen:"
@@ -69,7 +69,7 @@
     "message": "nur Domainname (en.wikipedia.org)"
   },
   "bypass_copy_with_ctrl_option": {
-    "message": "Umgehen mit Strg"
+    "message": "Umgehen mit Strg (⌘ auf Mac)"
   },
   "bypass_copy_with_alt_option": {
     "message": "Umgehen mit Alttest"
