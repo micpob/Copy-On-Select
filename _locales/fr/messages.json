@@ -6,22 +6,22 @@
     "message": "Sélectionnez du texte et il sera instantanément copié! Collez-le en un seul clic!"
   },
   "options_page_title": {
-    "message": "Options:"
+    "message": "Options :"
   },
   "copy_on_select_option": {
-    "message": "Copier automatiquement lorsque vous sélectionnez:"
+    "message": "Copier automatiquement lorsque vous sélectionnez :"
   },
   "show_copied_alert_option": {
-    "message": "Afficher l'alerte 'Copié!'"
+    "message": "Afficher l'alerte 'Copié!' :"
   },
   "paste_on_middle_click_option": {
-    "message": "Coller sur le clic central:"
+    "message": "Coller sur le clic central :"
   },
   "paste_on_double_click_ctrl_option": {
-    "message": "Coller au double clic + Ctrl (⌘ sur Mac):"
+    "message": "Coller au double clic + Ctrl (⌘ sur Mac) :"
   },
   "trim_selection_option": {
-    "message": "Supprimer les espaces vides au début et à la fin de la sélection:"
+    "message": "Supprimer les espaces vides au début et à la fin de la sélection :"
   },
   "open_guide_button": {
     "message": "Ouvrir le guide de l'utilisateur"
@@ -30,7 +30,7 @@
     "message": "Fermer cette page"
   },
   "always_clean_field_option": {
-    "message": "Toujours vider le champ avant de coller:"
+    "message": "Toujours vider le champ avant de coller :"
   },
   "context_menu_how_it_works": {
     "message": "Guide d'utilisation"
@@ -39,13 +39,13 @@
     "message": "(maintenir la touche Maj pour inverser)"
   },
   "copy_only_with_alt_option": {
-    "message": "Copie automatique uniquement lorsque la touche Alt est enfoncée:"
+    "message": "Copie automatique uniquement lorsque la touche Alt est enfoncée :"
   },
   "context_menu_my_other_extensions": {
     "message": "★★ Mes autres extensions ★★"
   },
   "bypass_copy_in_input_fields_option": {
-    "message": "Ignorer la copie automatique dans les champs de saisie:"
+    "message": "Ignorer la copie automatique dans les champs de saisie :"
   },
   "prepend_text_option": {
     "message": "Ajoutez ce texte avant le contenu copié :"
