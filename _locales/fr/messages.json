@@ -73,5 +73,8 @@
   },
   "bypass_copy_with_alt_option": {
     "message": "contourner avec Alt"
+  },
+  "remove_emojis_option": {
+    "message": "Supprimer les emojis de la sélection :"
   }
 }

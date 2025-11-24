@@ -31,6 +31,7 @@ chrome.runtime.onInstalled.addListener((details) => {
           "trimSelection": false,
           "alwaysCleanField": false,
           "bypassCopyOnEditableElements": false,
+          "removeEmojis": false,
           "prependText": false,
           "textToPrepend": '',
           "postpendText": false,
@@ -65,7 +66,7 @@ chrome.runtime.onInstalled.addListener((details) => {
         })
         break;
      case 'update':
-        chrome.storage.local.get(['active', 'copyOnSelect', 'copyOnlyWithAlt', 'showCopiedAlert', 'pasteOnDoubleClick', 'pasteOnMiddleClick', 'lastSelection', 'trimSelection', 'alwaysCleanField', 'bypassCopyOnEditableElements', 'prependText', 'textToPrepend', 'postpendText', 'textToPostpend', 'bypassCopyWithAlt', 'includeUrl', 'urlType', 'bypassCopyWithCtrl'], (result) => {
+        chrome.storage.local.get(['active', 'copyOnSelect', 'copyOnlyWithAlt', 'showCopiedAlert', 'pasteOnDoubleClick', 'pasteOnMiddleClick', 'lastSelection', 'trimSelection', 'alwaysCleanField', 'bypassCopyOnEditableElements', 'prependText', 'textToPrepend', 'postpendText', 'textToPostpend', 'bypassCopyWithAlt', 'includeUrl', 'urlType', 'bypassCopyWithCtrl', 'removeEmojis'], (result) => {
           let active = typeof result.active == 'boolean' ? result.active : true
           let copyOnSelect = typeof result.copyOnSelect == 'boolean' ? result.copyOnSelect : true
           let bypassCopyWithCtrl = typeof result.bypassCopyWithCtrl == 'boolean' ? result.bypassCopyWithCtrl : true
@@ -80,6 +81,7 @@ chrome.runtime.onInstalled.addListener((details) => {
           let trimSelection = result.trimSelection ? result.trimSelection : false
           let alwaysCleanField = result.alwaysCleanField ? result.alwaysCleanField : false
           let bypassCopyOnEditableElements = result.bypassCopyOnEditableElements ? result.bypassCopyOnEditableElements : false
+          let removeEmojis = result.removeEmojis ? result.removeEmojis : false
           let prependText = result.prependText ? result.prependText : false
           let textToPrepend = result.textToPrepend && result.textToPrepend.length > 0 ? result.textToPrepend : ''
           let postpendText = result.postpendText ? result.postpendText : false
@@ -99,6 +101,7 @@ chrome.runtime.onInstalled.addListener((details) => {
             "trimSelection": trimSelection,
             "alwaysCleanField": alwaysCleanField,
             "bypassCopyOnEditableElements": bypassCopyOnEditableElements,
+            "removeEmojis": removeEmojis,
             "prependText": prependText,
             "textToPrepend": textToPrepend,  
             "postpendText": postpendText,

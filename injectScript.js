@@ -1,7 +1,7 @@
 const imageSource = chrome.runtime.getURL("./Res/copied.svg")
 
 const copySelectionToclipboard = (event) => {
-  chrome.storage.local.get(['active', 'copyOnSelect', 'lastSelection', 'trimSelection', 'copyOnlyWithAlt', 'bypassCopyOnEditableElements', 'prependText', 'textToPrepend', 'postpendText', 'textToPostpend', 'bypassCopyWithAlt', 'includeUrl', 'urlType', 'bypassCopyWithCtrl'], (result) => {
+  chrome.storage.local.get(['active', 'copyOnSelect', 'lastSelection', 'trimSelection', 'copyOnlyWithAlt', 'bypassCopyOnEditableElements', 'prependText', 'textToPrepend', 'postpendText', 'textToPostpend', 'bypassCopyWithAlt', 'includeUrl', 'urlType', 'bypassCopyWithCtrl', 'removeEmojis'], (result) => {
     if (result.active && result.copyOnSelect) {
       if (result.copyOnlyWithAlt && !event.altKey) return
       if (result.bypassCopyWithAlt && event.altKey) return
@@ -12,6 +12,7 @@ const copySelectionToclipboard = (event) => {
       const selectionTrimmed = selection.trim()
       if (typeof selection !== 'undefined' && selectionTrimmed.length > 0) {
         let finalSelection = result.trimSelection ? selectionTrimmed : selection
+        finalSelection = result.removeEmojis? finalSelection.replaceAll(/\p{Extended_Pictographic}/ug, '') : finalSelection
         finalSelection = result.prependText ? `${result.textToPrepend}${finalSelection}` : finalSelection
         finalSelection = result.postpendText ? `${finalSelection}${result.textToPostpend}` : finalSelection
         if (result.includeUrl && result.urlType) {
