@@ -284,7 +284,7 @@ const removeEmojisSetter = document.getElementById('remove_emojis_setter')
 const removeEmojisSwitch = document.getElementById('remove_emojis_switch')
 const removeEmojisOnOffIndicator = document.getElementById('remove_emojis_label')
 
-browser.storage.local.get('removeEmojis', (result) => {  
+chrome.storage.local.get('removeEmojis', (result) => {  
   if (result.removeEmojis) {
     removeEmojisSetter.classList.remove('inactive')
     removeEmojisSwitch.checked = true
@@ -294,11 +294,11 @@ browser.storage.local.get('removeEmojis', (result) => {
 
 removeEmojisSwitch.addEventListener('change', (e) => {
   if (e.target.checked) {
-    browser.storage.local.set({'removeEmojis': true})    
+    chrome.storage.local.set({'removeEmojis': true})    
     removeEmojisSetter.classList.remove('inactive')
     removeEmojisOnOffIndicator.innerHTML = 'on'
   } else {
-    browser.storage.local.set({'removeEmojis': false})    
+    chrome.storage.local.set({'removeEmojis': false})    
     removeEmojisSetter.classList.add('inactive')
     removeEmojisOnOffIndicator.innerHTML = 'off'
   }
