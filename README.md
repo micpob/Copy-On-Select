@@ -9,7 +9,7 @@ This Chrome extension will let you select any text in a web page and have it **a
 </div>
 <br/>
 
-You can also **quickly paste** the copied text by clicking on the mouse wheel, or by double clicking the left mouse button while keeping the Ctrl key pressed.  
+You can also **quickly paste** the copied text by clicking on the mouse wheel or by double-clicking the left mouse button while keeping the Ctrl key pressed.  
 If you keep the Shift key pressed while pasting, the field into which you are pasting will be emptied of all already existing text before pasting.
 
 <br/>
