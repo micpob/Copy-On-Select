@@ -32,12 +32,8 @@ If you keep the Shift key pressed while pasting, the field into which you are pa
   
 &nbsp;  
 
-## Stack used:
-
-HTML, CSS, Javascript (Extensions APIs)
+**Made with:** HTML, CSS, Javascript (Extensions APIs)
 
 &nbsp;
-  
-### Install here: 
 
 <a href="https://chrome.google.com/webstore/detail/copy-on-select/kdfngfkkopeoejecmfejlcpblohnbael"><img src="Docs/Screenshots/chrome-web-store-logo-large.png" alt="Chrome web store button" width="250px" ></a>
