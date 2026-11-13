@@ -127,6 +127,7 @@ const isEditableElement = (el) =>{
 }
 
 document.addEventListener('pointerup', (e) => {
+  if (!e.isTrusted) return
   if (e.which == 2 || e.button == 4 ) {
     pasteOnMiddleClick(e)
   } else {
@@ -135,6 +136,7 @@ document.addEventListener('pointerup', (e) => {
 })
 
 document.addEventListener('pointerdown', (e) => {
+  if (!e.isTrusted) return
   if (e.which == 2 || e.button == 4) {
     if (isEditableElement(e.target)) {
       e.target.focus()
@@ -145,6 +147,7 @@ document.addEventListener('pointerdown', (e) => {
 })
 
 document.addEventListener('dblclick', (e) => {
+  if (!e.isTrusted) return
   if (e.ctrlKey || e.metaKey) {
     pasteOnDoubleClick(e)
   } 
